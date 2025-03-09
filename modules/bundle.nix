@@ -11,5 +11,6 @@
 	./stylix.nix
         ./docker.nix
         ./gaming.nix
+        ./swap.nix
 	];
 }

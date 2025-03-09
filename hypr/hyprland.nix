@@ -19,7 +19,7 @@
     "$mainMod, space, exec, rofi -show drun -show-icons"
     "$mainMod, F, exec, librewolf"
     "$mainMod, I, exec, mullvad-browser & i2prouter"
-    ", Print, exec, hyprshot -s"
+    "$mainMod, U, exec, hyprshot -m window -m active --clipboard-only"
     "$mainMod, Z, exec, zettlr"
     "$mainMod, L, exec, hyprlock"
     "$mainMod, T, exec, tor-browser"
@@ -74,6 +74,10 @@
         ];
     };
     extraConfig = ''
+windowrule = opacity 0.73, kitty
+
+env=ELECTRON_OZONE_PLATFORM_HINT,wayland
+
 monitor = DP-1, 1920x1080@60, 0x0, 1
 monitor = prefered, 1920x1080@144, auto, 1
 
@@ -140,20 +144,15 @@ general {
 
 # https://wiki.hyprland.org/Configuring/Variables/#decoration
 decoration {
-    rounding = 20
+    rounding = 25
 
     # Change transparency of focused and unfocused windows
     active_opacity = 1.0
-    inactive_opacity = 1.0 #0.73
-
-    #drop_shadow = false
-    #shadow_range = 4
-    #shadow_render_power = 3
-    #col.shadow = rgba(1a1a1aee)
+    inactive_opacity = 0.73 #0.73
 
     # https://wiki.hyprland.org/Configuring/Variables/#blur
     blur {
-        enabled = false
+        enabled = true
         size = 6
         passes = 1
         

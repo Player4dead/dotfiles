@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
 
 	nixpkgs.config.allowUnfree = true;
 
@@ -30,8 +30,7 @@
                 hunspellDicts.en_US
 
 		i2p
-		librewolf-bin
-                ungoogled-chromium
+                chromium
                 mullvad-browser
 
 		godot_4
@@ -45,6 +44,7 @@
                 bottles
 
 		discord
+                hexchat
 
 		# random
 		xarchiver
@@ -56,6 +56,7 @@
 		#qbittorrent
 		#blender-hip
 		lmms
+                cava
 
 		# download
 		vdhcoapp
@@ -71,7 +72,7 @@
 		networkmanagerapplet
 		udiskie
 		hyprshot
-		#hyprpolkitagent
-  	];
+		inputs.hyprpolkitagent.packages.x86_64-linux.hyprpolkitagent
+  ];
 
 }

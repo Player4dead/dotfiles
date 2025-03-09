@@ -36,9 +36,23 @@
   time.timeZone = "Europe/Zurich";
   i18n.defaultLocale = "de_CH.UTF-8";
   console.keyMap = "sg";
-  #programs.firefox.enable = true;
 
-  programs.ladybird.enable = true;
+  #programs.ladybird.enable = true;
+  programs.firefox = {
+  enable = true;
+  package = pkgs.librewolf;
+  policies = {
+    DisableTelemetry = true;
+    DisableFirefoxStudies = true;
+    ExtensionSettings = {
+        "uBlock0@raymondhill.net" = {
+        install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+        installation_mode = "force_installed";
+      };
+    };
+  };
+  };
+ 
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }

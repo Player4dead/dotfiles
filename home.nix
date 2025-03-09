@@ -1,9 +1,8 @@
-{inputs, pkgs, ... }: {
+{inputs, ... }: {
   imports = [
     inputs.hyprland.homeManagerModules.default
     ./hypr/hyprland.nix
     ./hypr/hyprlock.nix
-    #./hypr/hyprpanel.nix
     ./home/bundle.nix
   ];
 
