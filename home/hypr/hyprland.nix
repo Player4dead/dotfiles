@@ -16,7 +16,7 @@
     "$mainMod, P, pseudo," # dwindle
     "$mainMod, J, togglesplit," # dwindle
 
-    "$mainMod, space, exec, rofi -show drun -show-icons"
+    "$mainMod, space, exec, wofi --show drun"
     "$mainMod, F, exec, librewolf"
     "$mainMod, I, exec, mullvad-browser & i2prouter"
     "$mainMod, U, exec, hyprshot -m window -m active --clipboard-only"
