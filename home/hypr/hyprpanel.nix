@@ -1,10 +1,10 @@
-{
-
 { inputs, ... }:
 {
   imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
 
   programs.hyprpanel = {
+
+    overlay.enable = true;
 
     # Enable the module.
     # Default: false
@@ -78,6 +78,4 @@
       };
     };
   };
-}
-
 }

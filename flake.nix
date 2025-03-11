@@ -8,6 +8,8 @@
     hyprlock.url = "github:hyprwm/hyprlock";
     hyprpolkitagent.url = "github:/hyprwm/hyprpolkitagent";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
+
 
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
@@ -32,7 +34,6 @@
 		./configuration.nix
 		inputs.stylix.nixosModules.stylix
 		home-manager.nixosModules.home-manager
-                {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         	nvf.nixosModules.default
         {
       	home-manager.useUserPackages = false;
