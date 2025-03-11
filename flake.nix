@@ -7,6 +7,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
     hyprlock.url = "github:hyprwm/hyprlock";
     hyprpolkitagent.url = "github:/hyprwm/hyprpolkitagent";
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
 
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
@@ -17,17 +18,22 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, nvf, ... } @ inputs: {
+  outputs = { nixpkgs, home-manager, nvf, self, ... } @ inputs: let
+        system = "x86_64-linux";
+  in {
 
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-    	system = "x86_64-linux";
-	specialArgs = { inherit inputs; };
+    	specialArgs = {
+        inherit inputs;
+        inherit system;
+        };
 
 	modules = [
 		./configuration.nix
 		inputs.stylix.nixosModules.stylix
 		home-manager.nixosModules.home-manager
-		nvf.nixosModules.default
+                {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+        	nvf.nixosModules.default
         {
       	home-manager.useUserPackages = false;
       	home-manager.users.player4dead = import ./home.nix;

@@ -6,6 +6,8 @@
   stylix.cursor.name = "Bibata-Modern-Ice";
   stylix.polarity = "dark";
 
+  stylix.targets.kitty.enable = true;
+
   stylix.targets.plymouth.enable = false;
 
 }

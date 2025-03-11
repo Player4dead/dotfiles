@@ -73,6 +73,7 @@
 		udiskie
 		hyprshot
 		inputs.hyprpolkitagent.packages.x86_64-linux.hyprpolkitagent
+                hyprpanel
   ];
 
 }

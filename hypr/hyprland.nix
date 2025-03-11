@@ -74,8 +74,6 @@
         ];
     };
     extraConfig = ''
-windowrule = opacity 0.73, kitty
-
 env=ELECTRON_OZONE_PLATFORM_HINT,wayland
 
 monitor = DP-1, 1920x1080@60, 0x0, 1
@@ -97,7 +95,8 @@ monitor = prefered, 1920x1080@144, auto, 1
 
 exec-once = swww-daemon
 exec-once = udiskie -a -n
-exec-once = waybar
+#exec-once = waybar
+exec-once = hyprpanel
 exec-once = nm-applet --indicator
 exec-once = discord
 exec-once = librewolf 
