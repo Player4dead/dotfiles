@@ -1,5 +1,5 @@
 {
-# gaming
+  # gaming
   programs = {
     steam = {
       gamescopeSession.enable = true;

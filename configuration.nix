@@ -15,7 +15,7 @@
   #};
 
   environment.sessionVariables = {
-        FLAKE = "/home/player4dead/.dotfiles";
+    FLAKE = "/home/player4dead/.dotfiles";
   };
 
   hardware.graphics = {
@@ -29,7 +29,11 @@
   services.blueman.enable = true;
 
   # nixos
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
@@ -39,20 +43,20 @@
 
   #programs.ladybird.enable = true;
   programs.firefox = {
-  enable = true;
-  package = pkgs.librewolf;
-  policies = {
-    DisableTelemetry = true;
-    DisableFirefoxStudies = true;
-    ExtensionSettings = {
+    enable = true;
+    package = pkgs.librewolf;
+    policies = {
+      DisableTelemetry = true;
+      DisableFirefoxStudies = true;
+      ExtensionSettings = {
         "uBlock0@raymondhill.net" = {
-        install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-        installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+          installation_mode = "force_installed";
+        };
       };
     };
   };
-  };
- 
+
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }

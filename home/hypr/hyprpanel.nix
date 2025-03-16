@@ -34,7 +34,7 @@
     # Useful for overriding colors in your selected theme.
     # Default: {}
     #override = {
-      #theme.bar.menus.text = "#123ABC";
+    #theme.bar.menus.text = "#123ABC";
     #};
 
     # Configure bar layouts for monitors.
@@ -43,9 +43,16 @@
     layout = {
       "bar.layouts" = {
         "0" = {
-          left = [ "dashboard" "workspaces" ];
+          left = [
+            "dashboard"
+            "workspaces"
+          ];
           middle = [ "media" ];
-          right = [ "volume" "systray" "notifications" ];
+          right = [
+            "volume"
+            "systray"
+            "notifications"
+          ];
         };
       };
     };

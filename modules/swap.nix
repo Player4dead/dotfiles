@@ -1,10 +1,10 @@
 {
 
   swapDevices = [
-        {
-        device = "/swapfile";
-        size = 24 * 1024;
-        }
-        ];
+    {
+      device = "/swapfile";
+      size = 24 * 1024;
+    }
+  ];
 
 }

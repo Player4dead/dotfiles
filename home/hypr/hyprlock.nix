@@ -1,9 +1,16 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 let
   foreground = "rgba(216, 222, 233, 0.70)";
   imageStr = toString config.stylix.image;
   font = config.stylix.fonts.serif.name;
-in {
+in
+{
   programs.hyprlock = {
     enable = true;
     package = inputs.hyprlock.packages.${pkgs.system}.hyprlock;
@@ -12,7 +19,7 @@ in {
         grace = 5;
         no_fade_in = false;
         disable_loading_bar = false;
-	hide_cursor = true;
+        hide_cursor = true;
       };
 
       # BACKGROUND
@@ -77,4 +84,3 @@ in {
     };
   };
 }
-
