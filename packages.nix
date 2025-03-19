@@ -19,6 +19,9 @@
     gparted
     nh
 
+
+gimp
+
     # editor
     zettlr
     nixd
