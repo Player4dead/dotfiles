@@ -19,8 +19,10 @@
     gparted
     nh
 
+    floorp
 
-gimp
+    gimp
+    kdePackages.kdenlive
 
     # editor
     zettlr
@@ -45,7 +47,10 @@ gimp
     the-powder-toy
     bottles
 
-    discord
+    (discord.override {
+      withVencord = true;
+    })
+    #discord
     hexchat
 
     # random

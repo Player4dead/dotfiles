@@ -1,7 +1,7 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.enable = true;
+    #systemd.enable = true;
     settings = {
 
       "$mainMod" = "SUPER";
@@ -17,8 +17,8 @@
         "$mainMod, J, togglesplit," # dwindle
 
         "$mainMod, space, exec, wofi --show drun"
-        "$mainMod, F, exec, librewolf"
-        "$mainMod, I, exec, librewolf --new-instance -p i2p & i2prouter"
+        "$mainMod, F, exec, floorp"
+        #"$mainMod, I, exec, librewolf --new-instance -p i2p & i2prouter"
         "$mainMod, U, exec, hyprshot -m window -m active --clipboard-only"
         "$mainMod, Z, exec, zettlr"
         "$mainMod, L, exec, hyprlock"
@@ -96,7 +96,7 @@
       exec-once = swww-daemon
       exec-once = udiskie -a -n
       exec-once = discord
-      exec-once = librewolf 
+      exec-once = floorp
       exec-once = keepassxc
       exec-once = sleep 1 && cd /mnt/extern/planka && docker compose up
       exec-once = systemctl --user start hyprpolkitagent
