@@ -40,22 +40,22 @@
     # Configure bar layouts for monitors.
     # See 'https://hyprpanel.com/configuration/panel.html'.
     # Default: null
-    layout = {
-      "bar.layouts" = {
-        "0" = {
-          left = [
-            "dashboard"
-            "workspaces"
-          ];
-          middle = [ "clock" ];
-          right = [
-            "volume"
-            "systray"
-            "notifications"
-          ];
-        };
-      };
-    };
+    #layout = {
+      #"bar.layouts" = {
+        #"0" = {
+          #left = [
+            #"dashboard"
+            #"workspaces"
+          #];
+          #middle = [ "clock" ];
+          #right = [
+            #"volume"
+            #"systray"
+            #"notifications"
+          #];
+        #};
+      #};
+    #};
 
     # Configure and theme almost all options from the GUI.
     # Options that require '{}' or '[]' are not yet implemented,

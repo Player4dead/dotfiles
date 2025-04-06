@@ -9,7 +9,6 @@
     ./hyprland.nix
     ./extern.nix
     ./stylix.nix
-    ./docker.nix
     ./gaming.nix
     ./swap.nix
   ];

@@ -21,9 +21,6 @@
 
     floorp
 
-    gimp
-    kdePackages.kdenlive
-
     # editor
     zettlr
     nixd
@@ -40,30 +37,25 @@
     godot_4
 
     # gaming
-    mindustry
     lutris
     mangohud
     heroic
-    the-powder-toy
     bottles
 
-    (discord.override {
-      withVencord = true;
-    })
+   (discord.override {
+        withVencord = true;
+    }) 
     #discord
-    hexchat
 
     # random
     xarchiver
     ffmpeg-full
     mpv
-    vlc
     tor-browser
     keepassxc
     #qbittorrent
     #blender-hip
     lmms
-    cava
 
     # download
     vdhcoapp

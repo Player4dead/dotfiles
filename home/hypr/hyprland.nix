@@ -18,7 +18,7 @@
 
         "$mainMod, space, exec, wofi --show drun"
         "$mainMod, F, exec, floorp"
-        #"$mainMod, I, exec, librewolf --new-instance -p i2p & i2prouter"
+        "$mainMod, I, exec, floorp --new-instance -p i2p & i2prouter"
         "$mainMod, U, exec, hyprshot -m window -m active --clipboard-only"
         "$mainMod, Z, exec, zettlr"
         "$mainMod, L, exec, hyprlock"
@@ -97,8 +97,6 @@
       exec-once = udiskie -a -n
       exec-once = discord
       exec-once = floorp
-      exec-once = keepassxc
-      exec-once = sleep 1 && cd /mnt/extern/planka && docker compose up
       exec-once = systemctl --user start hyprpolkitagent
 
       #############################
@@ -219,7 +217,7 @@
       # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
       device {
           name = epic-mouse-v1
-          sensitivity = -0.5
+          sensitivity = -0.8
       }
 
 

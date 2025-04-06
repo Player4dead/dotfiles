@@ -9,10 +9,6 @@
     ./packages.nix
     ./modules/bundle.nix
   ];
-  #services.ollama = {
-  #enable = true;
-  #acceleration = "rocm";
-  #};
 
   environment.sessionVariables = {
     FLAKE = "/home/player4dead/.dotfiles";
@@ -35,28 +31,12 @@
   ];
 
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "desktop"; # Define your hostname.
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Zurich";
   i18n.defaultLocale = "de_CH.UTF-8";
   console.keyMap = "sg";
 
-  #programs.ladybird.enable = true;
-  #programs.firefox = {
-    #enable = true;
-    #package = pkgs.librewolf;
-    #policies = {
-      #DisableTelemetry = true;
-      #DisableFirefoxStudies = true;
-      #ExtensionSettings = {
-        #"uBlock0@raymondhill.net" = {
-          #install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-          #installation_mode = "force_installed";
-        #};
-      #};
-    #};
-  #};
-
-  system.stateVersion = "24.05"; # Did you read the comment?
+   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
