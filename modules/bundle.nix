@@ -6,7 +6,8 @@
     ./user.nix
     ./nvf.nix
     #./amd.nix
-    ./hyprland.nix
+    #./hyprland.nix
+    ./niri.nix
     ./extern.nix
     ./stylix.nix
     ./gaming.nix
