@@ -11,7 +11,7 @@
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
 
-    niri.url = "https://github.com/sodiboo/niri-flake";
+    niri.url = "github:sodiboo/niri-flake";
 
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
@@ -45,7 +45,7 @@
           inputs.stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager
           nvf.nixosModules.default
-          inputs.niri.homeModules.config
+          #inputs.niri.homeModules.config
           {
             home-manager.useUserPackages = false;
             home-manager.users.player4dead = import ./home.nix;

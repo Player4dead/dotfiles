@@ -10,6 +10,7 @@
     ./modules/bundle.nix
   ];
 
+  
   environment.sessionVariables = {
     FLAKE = "/home/player4dead/.dotfiles";
   };

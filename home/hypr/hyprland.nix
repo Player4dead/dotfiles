@@ -16,7 +16,7 @@
         "$mainMod, P, pseudo," # dwindle
         "$mainMod, J, togglesplit," # dwindle
 
-        "$mainMod, space, exec, wofi --show drun"
+        "$mainMod, space, exec, fuzzel"
         "$mainMod, F, exec, floorp"
         "$mainMod, I, exec, floorp --new-instance -p i2p & i2prouter"
         "$mainMod, U, exec, hyprshot -m window -m active --clipboard-only"

@@ -66,14 +66,10 @@
     libnotify
     swww
     kitty
-    wofi
     networkmanagerapplet
     udiskie
     hyprshot
     inputs.hyprpolkitagent.packages.x86_64-linux.hyprpolkitagent
-
-    # niri
-    alacritty
     fuzzel
   ];
 
