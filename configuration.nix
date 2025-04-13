@@ -15,6 +15,10 @@
     FLAKE = "/home/player4dead/.dotfiles";
   };
 
+  # for anytype
+  services.gnome.gnome-keyring.enable = true;
+  environment.systemPackages = [pkgs.gcr];
+
   hardware.graphics = {
     enable = true;
     enable32Bit = true;

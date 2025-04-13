@@ -11,8 +11,6 @@
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
 
-    niri.url = "github:sodiboo/niri-flake";
-
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -28,6 +26,7 @@
       home-manager,
       nvf,
       self,
+      legacynixpgs,
       ...
     }@inputs:
     let
@@ -38,6 +37,15 @@
       nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
+
+          pkgs-stable = import legacynixpgs {
+            # Refer to the `system` parameter from
+            # the outer scope recursively
+            inherit system;
+            # To use Chrome, we need to allow the
+            # installation of non-free software.
+            config.allowUnfree = true;
+          };
         };
 
         modules = [

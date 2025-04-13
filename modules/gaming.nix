@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ pkgs-stable, pkgs, ... }: {
   # gaming
   programs = {
     steam = {
@@ -6,7 +6,7 @@
       enable = true;
     };
     gamescope = {
-      package = inputs.legacynixpgs.legacyPackages.${pkgs.system}.gamescope;
+      package = pkgs-stable.gamescope;
       enable = true;
       capSysNice = false;
     };
