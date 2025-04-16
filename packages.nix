@@ -54,10 +54,10 @@
     mpv
     tor-browser
     keepassxc
-    #qbittorrent
+    qbittorrent
     #blender-hip
     lmms
-    anytype
+    openutau
 
     # download
     vdhcoapp

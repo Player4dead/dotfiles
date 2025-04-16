@@ -12,5 +12,6 @@
     ./stylix.nix
     ./gaming.nix
     ./swap.nix
+    ./anytype.nix
   ];
 }
