@@ -1,4 +1,5 @@
-{
+{ inputs, ... }: {
+
   programs.git = {
     enable = true;
     userName = "player4dead";

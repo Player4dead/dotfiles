@@ -1,7 +1,10 @@
 { inputs, ... }: {
+
+imports = [ inputs.hyprland.homeManagerModules.default ];
+
+
   wayland.windowManager.hyprland = {
     enable = true;
-    import = [ inputs.hyprland.homeManagerModules.default ];
 
     #systemd.enable = true;
     settings = {
