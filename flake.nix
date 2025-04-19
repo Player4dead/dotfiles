@@ -39,16 +39,13 @@
           inherit inputs;
 
           pkgs-stable = import legacynixpgs {
-            # Refer to the `system` parameter from
-            # the outer scope recursively
             inherit system;
-            # To use Chrome, we need to allow the
-            # installation of non-free software.
             config.allowUnfree = true;
           };
         };
 
         modules = [
+          ./host/desktop/modules/bundle.nix
           ./configuration.nix
           inputs.stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager
@@ -56,7 +53,32 @@
           #inputs.niri.homeModules.config
           {
             home-manager.useUserPackages = false;
-            home-manager.users.player4dead = import ./home.nix;
+            home-manager.users.player4dead = import ./host/desktop/home/bundle.nix;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.backupFileExtension = "backup";
+          }
+        ];
+
+      };
+
+        nixosConfigurations.server = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+
+          pkgs-stable = import legacynixpgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+
+        modules = [
+          ./host/server/modules/bundle.nix
+          ./configuration.nix
+          home-manager.nixosModules.home-manager
+          nvf.nixosModules.default
+          {
+            home-manager.useUserPackages = false;
+            home-manager.users.player4dead = import ./host/server/home/bundle.nix;
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.backupFileExtension = "backup";
           }

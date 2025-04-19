@@ -5,19 +5,12 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
     ./packages.nix
-    ./modules/bundle.nix
   ];
-
   
   environment.sessionVariables = {
     FLAKE = "/home/player4dead/.dotfiles";
   };
-
-  # for anytype
-  services.gnome.gnome-keyring.enable = true;
-  environment.systemPackages = [pkgs.gcr];
 
   hardware.graphics = {
     enable = true;
@@ -36,7 +29,7 @@
   ];
 
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
-  networking.hostName = "desktop"; # Define your hostname.
+  networking.hostName = "server"; # Define your hostname.
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Zurich";
   i18n.defaultLocale = "de_CH.UTF-8";

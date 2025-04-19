@@ -1,9 +1,12 @@
-{ inputs, ... }:
 {
-  imports = [
-    inputs.hyprland.homeManagerModules.default
-    ./home/bundle.nix
-  ];
+  programs.git = {
+    enable = true;
+    userName = "player4dead";
+    userEmail = "player4dead@proton.me";
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
+  };
 
   home.stateVersion = "25.05";
 
