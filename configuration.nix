@@ -33,7 +33,7 @@
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Zurich";
   i18n.defaultLocale = "de_CH.UTF-8";
-  console.keyMap = "sg";
+  console.keyMap = "ch";
 
    system.stateVersion = "24.05"; # Did you read the comment?
 

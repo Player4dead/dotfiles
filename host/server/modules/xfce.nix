@@ -6,8 +6,7 @@
     xterm.enable = true;
     xfce.enable = true;
     };
+  
   };
-
-
 
 }
