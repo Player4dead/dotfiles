@@ -1,6 +1,7 @@
 {
 
   imports = [
+    ./hardware-configuration.nix
     ./packages.nix
     ./bootloader.nix
     ./sound.nix
