@@ -2,7 +2,7 @@
   description = "player4deads personal flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    unstablenixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     legacynixpgs.url = "github:nixos/nixpkgs?ref=24.11";
 
     hyprland.url = "github:hyprwm/Hyprland";
@@ -27,6 +27,7 @@
       nvf,
       self,
       legacynixpgs,
+      unstablenixpkgs,
       ...
     }@inputs:
     let
@@ -42,6 +43,7 @@
             inherit system;
             config.allowUnfree = true;
           };
+          nixpkgs = import unstablenixpkgs { inherit system; };
         };
 
         modules = [
@@ -69,6 +71,8 @@
             inherit system;
             config.allowUnfree = true;
           };
+
+        nixpkgs = import legacynixpgs { inherit system; };
         };
 
         modules = [
