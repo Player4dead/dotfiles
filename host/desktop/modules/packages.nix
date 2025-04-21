@@ -26,6 +26,7 @@
     mangohud
     heroic
     bottles
+    protonup
 
    (discord.override { withVencord = true; })
 
@@ -38,6 +39,7 @@
     #blender-hip
     lmms
     openutau
+    amberol
 
     # download
     vdhcoapp

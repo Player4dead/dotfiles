@@ -1,5 +1,4 @@
-{ pkgs-stable, pkgs, ... }: {
-  # gaming
+{ pkgs-stable, ... }: {
   programs = {
     steam = {
       gamescopeSession.enable = true;
@@ -12,4 +11,9 @@
     };
     gamemode.enable = true;
   };
+
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS =
+      "home/player4dead/.steam/root/compatibilitytools.d";
+    };
 }

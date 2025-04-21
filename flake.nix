@@ -18,7 +18,9 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-  };
+
+    oldpkgs.url = "github:nixos/nixpkgs/a6292e34000dc93d43bccf78338770c1c5ec8a99";
+    };
 
   outputs =
     {
@@ -38,6 +40,7 @@
       nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
+          inherit system;
 
           pkgs-stable = import legacynixpgs {
             inherit system;
@@ -66,6 +69,7 @@
         nixosConfigurations.server = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
+          inherit system;
 
           pkgs-stable = import legacynixpgs {
             inherit system;
