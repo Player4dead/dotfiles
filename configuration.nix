@@ -17,23 +17,17 @@
     enable32Bit = true;
   };
 
-  # bluetooth
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
-  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
-  services.blueman.enable = true;
-
   # nixos
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
 
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
-  networking.hostName = "server"; # Define your hostname.
+  networking.hostName = "desktop"; # Define your hostname.
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Zurich";
   i18n.defaultLocale = "de_CH.UTF-8";
-  console.keyMap = "ch";
+  console.keyMap = "sg";
 
    system.stateVersion = "24.05"; # Did you read the comment?
 

@@ -1,6 +1,7 @@
-{
-
+{ pkgs, ... }: {
+boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
   imports = [
+    ./bluetooth.nix
     ./hardware-configuration.nix
     ./packages.nix
     ./bootloader.nix
