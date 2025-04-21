@@ -4,6 +4,8 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    # browser
+    tor-browser
     floorp
 
     nixd
@@ -17,7 +19,7 @@
 
     i2p
 
-    pkgs-stable.godot_4
+    #godot_4
 
     # gaming
     lutris
@@ -25,19 +27,14 @@
     heroic
     bottles
 
-   (discord.override {
-        withVencord = true;
-    })
-    #vesktop
-    #discord
+   (discord.override { withVencord = true; })
 
     # random
     xarchiver
     ffmpeg-full
     mpv
-    tor-browser
     keepassxc
-    qbittorrent
+    #qbittorrent
     #blender-hip
     lmms
     openutau

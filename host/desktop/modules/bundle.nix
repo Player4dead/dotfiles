@@ -1,6 +1,7 @@
 { pkgs, ... }: {
 boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
   imports = [
+    ./ollama.nix
     ./bluetooth.nix
     ./hardware-configuration.nix
     ./packages.nix
@@ -8,7 +9,7 @@ boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
     ./sound.nix
     ./user.nix
     ./nvf.nix
-    #./amd.nix
+    ./amd.nix
     ./hyprland.nix
     #./niri.nix
     ./extern.nix
