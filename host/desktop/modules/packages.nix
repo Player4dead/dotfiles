@@ -19,7 +19,7 @@
 
     i2p
 
-    #godot_4
+    pkgs-stable.godot_4
 
     # gaming
     lutris

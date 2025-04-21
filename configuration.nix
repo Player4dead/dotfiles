@@ -12,11 +12,6 @@
     FLAKE = "/home/player4dead/.dotfiles";
   };
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
   # nixos
   nix.settings.experimental-features = [
     "nix-command"
