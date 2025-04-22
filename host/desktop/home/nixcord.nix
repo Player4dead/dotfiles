@@ -7,17 +7,12 @@
       ];
 
       frameless = true;
-      plugins = {
-        
-
-        frameless = true;
         plugins = {
           alwaysAnimate.enable = true;
           betterSettings.enable = true;
         };
       };
     };
-  };
 
 
 }
