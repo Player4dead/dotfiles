@@ -776,7 +776,7 @@
       "inputs": {
         "ags": "ags",
         "nixpkgs": [
-          "nixpkgs"
+          "unstablenixpkgs"
         ]
       },
       "locked": {

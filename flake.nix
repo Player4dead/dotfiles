@@ -9,7 +9,7 @@
     hyprlock.url = "github:hyprwm/hyprlock";
     hyprpolkitagent.url = "github:/hyprwm/hyprpolkitagent";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-    hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
+    hyprpanel.inputs.nixpkgs.follows = "unstablenixpkgs";
 
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
@@ -55,11 +55,11 @@
           inputs.stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager
           nvf.nixosModules.default
-          #inputs.niri.homeModules.config
           {
-            home-manager.useUserPackages = false;
+            home-manager.useUserPackages = true;
+            home-manager.useGlobalPkgs = false;
             home-manager.users.player4dead = import ./host/desktop/home/bundle.nix;
-            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.extraSpecialArgs = { inherit inputs; }; 
             home-manager.backupFileExtension = "backup";
 
             home-manager.sharedModules = [

@@ -1,6 +1,7 @@
 {
 
   programs.nixcord = {
+  enable = true;
     config = {
       themeLinks = [
         "https://refact0r.github.io/midnight-discord/build/midnight.css"
