@@ -7,6 +7,6 @@
     ./hypr/hyprlock.nix
     ./hypr/hyprland.nix
     ./hypr/hyprpanel.nix
-    #./niri.nix
+    ./nixcord.nix
   ];
 }

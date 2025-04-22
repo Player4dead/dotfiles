@@ -28,8 +28,6 @@
     bottles
     protonup
 
-   (discord.override { withVencord = true; })
-
     # random
     xarchiver
     ffmpeg-full

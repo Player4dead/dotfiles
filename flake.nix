@@ -19,7 +19,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    oldpkgs.url = "github:nixos/nixpkgs/a6292e34000dc93d43bccf78338770c1c5ec8a99";
+    nixcord.url = "github:kaylorben/nixcord";
     };
 
   outputs =
@@ -61,6 +61,11 @@
             home-manager.users.player4dead = import ./host/desktop/home/bundle.nix;
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.backupFileExtension = "backup";
+
+            home-manager.sharedModules = [
+              inputs.nixcord.homeManagerModules.nixcord
+            ];
+
           }
         ];
 
