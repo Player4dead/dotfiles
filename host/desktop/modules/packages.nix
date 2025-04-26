@@ -34,10 +34,12 @@
     mpv
     keepassxc
     #qbittorrent
-    #blender-hip
+    blender-hip
     lmms
     openutau
     amberol
+    kdePackages.kdenlive
+    audacity
 
     # download
     vdhcoapp

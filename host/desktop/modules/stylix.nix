@@ -1,13 +1,17 @@
 { pkgs, ... }:
 {
 
-  stylix.enable = true;
-  stylix.image = ./888880.jpg;
-  stylix.cursor.package = pkgs.bibata-cursors;
-  stylix.cursor.name = "Bibata-Modern-Ice";
-  stylix.cursor.size = 1;
-  stylix.polarity = "dark";
+  stylix = {
+    enable = true;
+    autoEnable = true;
+    image = ./888880.jpg;
+    polarity = "dark";
 
-  stylix.targets.plymouth.enable = false;
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 1;
+    };
 
+  };
 }

@@ -14,7 +14,7 @@
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
 
-    stylix.url = "github:danth/stylix";
+    stylix.url = "github:danth/stylix/release-24.11";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -63,7 +63,7 @@
             home-manager.backupFileExtension = "backup";
 
             home-manager.sharedModules = [
-              inputs.nixcord.homeManagerModules.nixcord
+              inputs.nixcord.homeModules.nixcord
             ];
 
           }
