@@ -1,5 +1,6 @@
 { pkgs, ... }: {
 boot.kernelPackages = pkgs.linuxPackages_latest;
+networking.hostName = "server";
 
   imports = [
     ./packages.nix

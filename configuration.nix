@@ -20,7 +20,7 @@
     "flakes"
   ];
 
-  networking.hostName = "desktop"; # Define your hostname.
+  #networking.hostName = "server"; # Define your hostname.
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Zurich";
   i18n.defaultLocale = "de_CH.UTF-8";
