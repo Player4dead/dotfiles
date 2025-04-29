@@ -7,7 +7,9 @@
   imports = [
     ./packages.nix
   ];
-  
+
+  boot.kernelParams = [ "usbcore.autosuspend=20" ];
+
   environment.sessionVariables = {
     FLAKE = "/home/player4dead/.dotfiles";
   };

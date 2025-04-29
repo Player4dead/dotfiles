@@ -9,5 +9,6 @@ boot.kernelPackages = pkgs.linuxPackages_latest;
     ./nvf.nix
     ./swap.nix
     ./hardware-configuration.nix
+    ./i2pd.nix
   ];
 }

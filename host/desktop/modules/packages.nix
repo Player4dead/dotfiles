@@ -1,4 +1,4 @@
-{ pkgs, inputs, pkgs-stable, ... }:
+{ pkgs, pkgs-stable, ... }:
 {
 
   nixpkgs.config.allowUnfree = true;
@@ -33,7 +33,7 @@
     ffmpeg-full
     mpv
     keepassxc
-    #qbittorrent
+    qbittorrent
     blender-hip
     lmms
     openutau

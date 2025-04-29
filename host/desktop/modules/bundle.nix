@@ -17,5 +17,7 @@ boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
     ./gaming.nix
     ./swap.nix
     ./anytype.nix
-  ];
+    ./virt-manager
+    ./shell.nix
+    ];
 }
