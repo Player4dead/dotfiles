@@ -2,7 +2,8 @@
 boot.kernelPackages = pkgs.linuxPackages_latest;
 
   imports = [
-    ./xfce.nix
+    ./packages.nix
+    #./xfce.nix
     ./sound.nix
     ./bootloader.nix
     ./user.nix
