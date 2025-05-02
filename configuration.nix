@@ -8,7 +8,7 @@
     ./packages.nix
   ];
 
-  boot.kernelParams = [ "usbcore.autosuspend=20" ];
+  systemd.network.enable = true;
 
   environment.sessionVariables = {
     FLAKE = "/home/player4dead/.dotfiles";
