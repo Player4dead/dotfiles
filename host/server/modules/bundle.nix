@@ -1,6 +1,7 @@
 { pkgs, ... }: {
 boot.kernelPackages = pkgs.linuxPackages_latest;
 networking.hostName = "server";
+services.logind.lidSwitchExternalPower = "ignore";
 
   imports = [
     ./packages.nix
@@ -13,5 +14,6 @@ networking.hostName = "server";
     ./hardware-configuration.nix
     ./i2pd.nix
     ./shell.nix
+    ./ssh.nix
   ];
 }
