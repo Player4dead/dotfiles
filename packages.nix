@@ -6,7 +6,6 @@
   environment.systemPackages = with pkgs; [
     # wichtige packete
     nixfmt-rfc-style
-    home-manager
     microcodeAmd
     nomacs
     alsa-utils
@@ -17,7 +16,6 @@
     yazi
     pavucontrol
     gparted
-    nh
 
     ];
 

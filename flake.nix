@@ -5,9 +5,6 @@
     unstablenixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     legacynixpgs.url = "github:nixos/nixpkgs?ref=24.11";
 
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprlock.url = "github:hyprwm/hyprlock";
-    hyprpolkitagent.url = "github:/hyprwm/hyprpolkitagent";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     hyprpanel.inputs.nixpkgs.follows = "unstablenixpkgs";
 

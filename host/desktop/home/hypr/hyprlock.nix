@@ -13,7 +13,6 @@ in
 {
   programs.hyprlock = {
     enable = true;
-    package = inputs.hyprlock.packages.${pkgs.system}.hyprlock;
     settings = {
       general = {
         grace = 5;
