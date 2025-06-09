@@ -11,6 +11,7 @@
     yazi
     tor-browser
     floorp
+    sops
 
     nixd
     keepassxc

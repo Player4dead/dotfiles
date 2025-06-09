@@ -15,16 +15,9 @@
     nvf.inputs.nixpkgs.follows = "nixpkgs";
 
     sops-nix.url = "github:Mic92/sops-nix";
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        darwin.follows = "";
-      };
-   };
 
-   nixcord.url = "github:kaylorben/nixcord";
-   stylix.url = "github:danth/stylix/release-24.11";
+    nixcord.url = "github:kaylorben/nixcord";
+    stylix.url = "github:danth/stylix/release-24.11";
 
   };
 
@@ -52,7 +45,6 @@
 	  home-manager.nixosModules.home-manager
 	  inputs.nvf.nixosModules.default
 
-	  inputs.agenix.nixosModules.default
 	  inputs.sops-nix.nixosModules.sops
 
           inputs.stylix.nixosModules.stylix
@@ -64,8 +56,6 @@
             home-manager.users.player4dead = ./desktop/home/bundle.nix;
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.backupFileExtension = "backup";
-
-	    environment.systemPackages = [ inputs.agenix.packages.${system}.default ];
 
             home-manager.sharedModules = [
               inputs.nixcord.homeModules.nixcord

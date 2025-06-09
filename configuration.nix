@@ -6,6 +6,11 @@
 
 {
 
+  sops.defaultSopsFile = ./secrets/secrets.ini;
+  sops.defaultSopsFormat = "ini";
+  sops.age.keyFile = "/home/player4dead/.config/sops/age/keys.txt";
+  sops.secrets."secrets/password" = {};
+
   environment.sessionVariables = {
     FLAKE = "/home/player4dead/.dotfiles";
   };
@@ -21,9 +26,6 @@
 
   # Configure console keymap
   console.keyMap = "sg";
-
-  # Install firefox.
-  programs.firefox.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
