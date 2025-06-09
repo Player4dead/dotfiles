@@ -13,6 +13,7 @@
      ./../configuration.nix
      ./hyprland.nix
      ./stylix.nix
+     ./sops.nix
      ];
 
 }

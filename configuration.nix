@@ -2,14 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
-
 {
-
-  sops.defaultSopsFile = ./secrets/secrets.ini;
-  sops.defaultSopsFormat = "ini";
-  sops.age.keyFile = "/home/player4dead/.config/sops/age/keys.txt";
-  sops.secrets."secrets/password" = {};
 
   environment.sessionVariables = {
     FLAKE = "/home/player4dead/.dotfiles";
