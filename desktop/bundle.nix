@@ -14,6 +14,7 @@
      ./hyprland.nix
      ./stylix.nix
      ./sops.nix
+     ./autologin.nix
      ];
 
 }

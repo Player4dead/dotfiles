@@ -11,6 +11,7 @@
     yazi
     tor-browser
     floorp
+    pavucontrol
     sops
 
     nixd
@@ -21,6 +22,7 @@
     godot
     mindustry-wayland
     xarchiver
+    kdePackages.kdenlive
 
     ];
 
