@@ -1,6 +1,4 @@
 {
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "player4dead";
-    };
+  services.getty.autologinUser = "player4dead";
+  services.getty.autologinOnce = true;
 }
