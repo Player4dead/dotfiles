@@ -8,6 +8,8 @@
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
 
+    niri.url = "github:sodiboo/niri-flake";
+
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -59,6 +61,7 @@
 
             home-manager.sharedModules = [
               inputs.nixcord.homeModules.nixcord
+              inputs.niri.homeModules.niri
             ];
           }
         ];
