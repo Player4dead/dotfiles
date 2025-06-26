@@ -8,6 +8,8 @@
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
 
+    ags.url = "github:aylur/ags";
+
     niri.url = "github:sodiboo/niri-flake";
 
     home-manager.url = "github:nix-community/home-manager";
@@ -20,17 +22,18 @@
 
     nixcord.url = "github:kaylorben/nixcord";
     stylix.url = "github:danth/stylix/release-24.11";
-
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
   outputs = { nixpkgs, home-manager, legacynixpgs, ... }@inputs:
   let
     system = "x86_64-linux";
+    pkgs = import nixpkgs { inherit system; };
   in {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
 
-        
+
 	specialArgs = {
           inherit inputs;
 	  inherit system;
@@ -56,7 +59,7 @@
             home-manager.useGlobalPkgs = false;
             home-manager.useUserPackages = true;
             home-manager.users.player4dead = ./desktop/home/bundle.nix;
-            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.extraSpecialArgs = { inherit inputs; inherit system; };
             home-manager.backupFileExtension = "backup";
 
             home-manager.sharedModules = [

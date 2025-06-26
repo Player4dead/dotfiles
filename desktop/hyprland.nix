@@ -9,6 +9,7 @@
     udiskie
     hyprshot
     fuzzel
+    alacritty
     ];
 
   programs.hyprlock.enable = true;

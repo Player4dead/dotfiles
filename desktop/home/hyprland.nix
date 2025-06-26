@@ -10,7 +10,7 @@
 
       # See https://wiki.hyprland.org/Configuring/Keywords/
       bind = [
-        "$mainMod, Q, exec, kitty"
+        "$mainMod, Q, exec, alacritty"
         "$mainMod, C, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, E, exec, kitty -e yazi"
@@ -76,7 +76,7 @@
       env=ELECTRON_OZONE_PLATFORM_HINT,wayland
 
       monitor = prefered, 1920x1080@60, 0x0, 1
-      monitor = DP-2, 1920x1080@144, auto, 1
+      monitor = DP-2, 1920x1080@144, auto, 1, vrr, 2
 
       ###################
       ### MY PROGRAMS ###
@@ -95,7 +95,7 @@
       exec-once = swww-daemon
       exec-once = udiskie -a -n
       exec-once = discord
-      exec-once = floorp
+      exec-once = zen
       exec-once = systemctl --user start hyprpolkitagent
 
       #############################

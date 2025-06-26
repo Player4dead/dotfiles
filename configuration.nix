@@ -2,7 +2,15 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{
+{ pkgs, ... }: {
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb;
+  };
+
+  fonts.packages = with pkgs; [ junicode ];
+
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
 
   environment.sessionVariables = {
     FLAKE = "/home/player4dead/.dotfiles";

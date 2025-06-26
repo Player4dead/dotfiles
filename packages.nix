@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
 
   nixpkgs.config.allowUnfree = true;
 
@@ -23,6 +23,10 @@
     mindustry-wayland
     xarchiver
     kdePackages.kdenlive
+    blender-hip
+    cava
+
+    inputs.zen-browser.packages."${system}".specific
 
     ];
 

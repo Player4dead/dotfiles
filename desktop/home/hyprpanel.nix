@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, lib, ... }:
 {
   imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
 
@@ -14,7 +14,7 @@
     # Useful when updating your config so that you
     # don't need to manually restart it.
     # Default: false
-    #systemd.enable = true;
+    systemd.enable = true;
 
     # Add '/nix/store/.../hyprpanel' to your
     # Hyprland config 'exec-once'.

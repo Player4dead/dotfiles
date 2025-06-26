@@ -8,8 +8,8 @@
 
         languages = {
           nix.enable = true;
-          clang.enable = true;
-        };
+          rust.enable = true;
+          };
     };
   };
   # set nvim to default text editor
