@@ -19,7 +19,7 @@
         "$mainMod, J, togglesplit," # dwindle
 
         "$mainMod, space, exec, fuzzel"
-        "$mainMod, F, exec, floorp"
+        "$mainMod, F, exec, zen"
         "$mainMod, U, exec, hyprshot -m window -m active --clipboard-only"
         "$mainMod, L, exec, hyprlock"
         "$mainMod, T, exec, tor-browser"

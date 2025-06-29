@@ -13,6 +13,8 @@
     floorp
     pavucontrol
     sops
+    jmtpfs
+    nemo
 
     nixd
     keepassxc
@@ -25,6 +27,8 @@
     kdePackages.kdenlive
     blender-hip
     cava
+    pcmanfm
+    yt-dlp
 
     inputs.zen-browser.packages."${system}".specific
 

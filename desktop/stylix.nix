@@ -4,7 +4,7 @@
   stylix = {
     enable = true;
     autoEnable = true;
-    image = ./110679.png;
+    image = ./888880.jpg;
     polarity = "dark";
 
       fonts = {

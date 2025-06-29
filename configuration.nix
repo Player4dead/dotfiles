@@ -3,12 +3,18 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { pkgs, ... }: {
-  services.mysql = {
-    enable = true;
-    package = pkgs.mariadb;
-  };
+  #services.mysql = {
+    #enable = true;
+    #package = pkgs.mariadb;
+  #};
+
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  services.blueman.enable = true;
+
 
   fonts.packages = with pkgs; [ junicode ];
+
+  services.gvfs.enable = true;
 
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
 
