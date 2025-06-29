@@ -4,7 +4,7 @@
   stylix = {
     enable = true;
     autoEnable = true;
-    image = ./888880.jpg;
+    image = ./youjo-senki-wallpapers.png;
     polarity = "dark";
 
       fonts = {
@@ -22,6 +22,8 @@
       enable = true;
       #useWallpaper = true;
     };
+
+    #targets.alacritty.enable = true;
 
     cursor = {
       package = pkgs.bibata-cursors;
