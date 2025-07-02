@@ -14,11 +14,10 @@
     pavucontrol
     sops
     jmtpfs
-    nemo
 
     nixd
     keepassxc
-    lmms
+    #lmms
     vdhcoapp
     monero-gui
     godot
@@ -29,6 +28,7 @@
     cava
     pcmanfm
     yt-dlp
+    activate-linux
 
     inputs.zen-browser.packages."${system}".specific
 

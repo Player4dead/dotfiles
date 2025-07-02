@@ -10,7 +10,7 @@
 
       # See https://wiki.hyprland.org/Configuring/Keywords/
       bind = [
-        "$mainMod, Q, exec, alacritty"
+        "$mainMod, Q, exec, kitty"
         "$mainMod, C, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, E, exec, kitty -e yazi"

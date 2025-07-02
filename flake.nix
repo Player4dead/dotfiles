@@ -22,7 +22,11 @@
 
     nixcord.url = "github:kaylorben/nixcord";
     stylix.url = "github:danth/stylix/release-24.11";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser = {
+      url = "github:MarceColl/zen-browser-flake"; #/96f1b5d80bf7360cb77c9b521f388324f18383a0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = { nixpkgs, home-manager, legacynixpgs, ... }@inputs:

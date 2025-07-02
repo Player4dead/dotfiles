@@ -9,7 +9,7 @@
      ./kitty.nix
      ./nixcord.nix
      #./niri.nix
-     #./ags.nix
+     ./ags.nix
    ];
 
 }
