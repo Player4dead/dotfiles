@@ -5,11 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     legacynixpgs.url = "github:nixos/nixpkgs?ref=24.11";
 
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-    hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
-
-    ags.url = "github:aylur/ags";
-
     niri.url = "github:sodiboo/niri-flake";
 
     home-manager.url = "github:nix-community/home-manager";

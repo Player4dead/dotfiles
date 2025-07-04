@@ -14,6 +14,7 @@
     pavucontrol
     sops
     jmtpfs
+    waybar
 
     nixd
     keepassxc

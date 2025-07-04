@@ -92,10 +92,11 @@
       # Autostart necessary processes (like notifications daemons, status bars, etc.)
       # Or execute your favorite apps at launch like this:
 
-      exec-once = swww-daemon
+      #exec-once = swww-daemon
       exec-once = udiskie -a -n
       exec-once = discord
       exec-once = zen
+      exec-once = waybar
       exec-once = systemctl --user start hyprpolkitagent
 
       #############################
