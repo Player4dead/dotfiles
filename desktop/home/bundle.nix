@@ -7,7 +7,7 @@
      ./hyprlock.nix
      ./kitty.nix
      ./nixcord.nix
-     #./niri.nix
+     ./niri.nix
    ];
 
 }

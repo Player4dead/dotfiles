@@ -1,7 +1,17 @@
-{ pkgs, inputs, config, ... }:
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}:
 {
 
+  programs.swaylock.enable = true;
+  services.mako.enable = true;
+
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+
+  xdg.configFile."niri/config.kdl".source = ./config.kdl;
 
   programs.niri = {
     package = pkgs.niri-unstable;
@@ -102,6 +112,39 @@
         "Alt+Print".action = screenshot-window;
         "Mod+P".action = power-off-monitors;
       };
+
+      spawn-at-startup = [
+        { command = ["waybar"]; }
+        { command = ["zen"]; }
+        { command = ["discord"]; }
+        { command = ["udiskie -a -n"]; }
+      ];
+
+      input = {
+        focus-follows-mouse.enable = true;
+        keyboard.xkb.layout = "ch";
+        mouse.accel-profile = "adaptive";
+        mouse.natural-scroll = true;
+        warp-mouse-to-focus.enable = false;
+      };
+
+      layout = {
+      gaps = 3;
+        border = {
+          enbale = true;
+          width = 3;
+        };
+        focus-ring.enable = false;
+
+        shadow = {
+          enable = true;
+          draw-behind-window = true;
+          color = "#00000070";
+          insert-hint.enable = true;
+        };
+      };
+
     };
   };
+
 }
