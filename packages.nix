@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, pkgs-stable, ... }: {
 
   nixpkgs.config.allowUnfree = true;
 
@@ -30,6 +30,7 @@
     pcmanfm
     yt-dlp
     activate-linux
+    pkgs-stable.lmms
 
     inputs.zen-browser.packages."${system}".specific
 
