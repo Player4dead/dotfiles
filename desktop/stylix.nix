@@ -19,11 +19,8 @@
        };
 
     targets.grub = {
-      enable = true;
-      #useWallpaper = true;
+      enable = false;
     };
-
-    #targets.alacritty.enable = true;
 
     cursor = {
       package = pkgs.bibata-cursors;

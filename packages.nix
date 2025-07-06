@@ -33,6 +33,8 @@
     pkgs-stable.lmms
 
     inputs.zen-browser.packages."${system}".specific
+    #inputs.xwayland.packages.x86_64-linux.default
+    xwayland-satellite
 
     ];
 

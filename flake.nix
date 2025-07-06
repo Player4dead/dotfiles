@@ -15,6 +15,7 @@
       url = "github:danth/stylix/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    xwayland.url = "github:Supreeeme/xwayland-satellite";
 
     home-manager = {
       url = "github:nix-community/home-manager";

@@ -2,6 +2,7 @@
   pkgs,
   inputs,
   config,
+  lib,
   ...
 }:
 {
@@ -20,6 +21,10 @@
     #config = null;
 
     settings = {
+      xwayland-satellite = {
+        enable = true;
+        path = lib.getExe pkgs.xwayland-satellite-unstable;
+      };
       environment."NIXOS_OZONE_WL" = "1";
       outputs = {
         "DP-1" = {
@@ -53,11 +58,11 @@
       };
 
       binds = with config.lib.niri.actions; {
-        "Mod+Q".action = spawn "alacritty";
+        "Mod+Q".action = spawn "kitty";
         "Mod+Space".action = spawn "fuzzel";
         "XF86AudioRaiseVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
         "XF86AudioLowerVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-";
-        "Mod+C".action = quit { skip-confirmation = true; };
+        "Mod+C".action = close-window; 
         "Mod+Plus".action = set-column-width "+10%";
 
         "Mod+Left".action = focus-column-left;
@@ -124,7 +129,7 @@
         focus-follows-mouse.enable = true;
         keyboard.xkb.layout = "ch";
         mouse.accel-profile = "adaptive";
-        mouse.natural-scroll = true;
+        mouse.natural-scroll = false;
         warp-mouse-to-focus.enable = false;
       };
 
@@ -132,14 +137,13 @@
         gaps = 3;
         border = {
           enable = true;
-          width = 3;
+          width = 4;
         };
         focus-ring.enable = false;
 
         shadow = {
           enable = true;
-          draw-behind-window = true;
-          #color = "#00000070";
+          draw-behind-window = false;
         };
         insert-hint.enable = true;
       };

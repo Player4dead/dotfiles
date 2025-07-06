@@ -73,6 +73,10 @@
       ];
     };
     extraConfig = ''
+    debug {
+  full_cm_proto=true
+}
+
       env=ELECTRON_OZONE_PLATFORM_HINT,wayland
 
       monitor = prefered, 1920x1080@60, 0x0, 1
