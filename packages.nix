@@ -31,6 +31,7 @@
     yt-dlp
     activate-linux
     pkgs-stable.lmms
+    fastfetch
 
     inputs.zen-browser.packages."${system}".specific
     #inputs.xwayland.packages.x86_64-linux.default

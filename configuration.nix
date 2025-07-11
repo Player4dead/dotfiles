@@ -8,6 +8,11 @@
     #package = pkgs.mariadb;
   #};
 
+xdg.portal = {
+  enable = true;
+  extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+};
+
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   services.blueman.enable = true;
 

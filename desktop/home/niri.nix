@@ -7,6 +7,10 @@
 }:
 {
 
+home.packages = with pkgs; [
+  xdg-desktop-portal-gnome
+];
+
   programs.swaylock.enable = true;
   services.mako.enable = true;
 
@@ -21,6 +25,7 @@
     #config = null;
 
     settings = {
+      prefer-no-csd = true;
       xwayland-satellite = {
         enable = true;
         path = lib.getExe pkgs.xwayland-satellite-unstable;
@@ -85,6 +90,8 @@
 
         "Mod+Shift+Left".action = move-column-to-monitor-left;
         "Mod+Shift+Right".action = move-column-to-monitor-right;
+        "Mod+Comma".action = consume-window-into-column;
+        "Mod+Shift+Comma".action = expel-window-from-column;
 
         "Mod+1".action = focus-workspace 1;
         "Mod+2".action = focus-workspace 2;
@@ -95,20 +102,13 @@
         "Mod+7".action = focus-workspace 7;
         "Mod+8".action = focus-workspace 8;
         "Mod+9".action = focus-workspace 9;
-        "Mod+Shift+1".action = move-column-to-index 1;
-        "Mod+Shift+2".action = move-column-to-index 2;
-        "Mod+Shift+3".action = move-column-to-index 3;
-        "Mod+Shift+4".action = move-column-to-index 4;
-        "Mod+Shift+5".action = move-column-to-index 5;
-        "Mod+Shift+6".action = move-column-to-index 6;
-        "Mod+Shift+7".action = move-column-to-index 7;
-        "Mod+Shift+8".action = move-column-to-index 8;
-        "Mod+Shift+9".action = move-column-to-index 9;
+        "Mod+Shift+Down".action = move-window-down-or-to-workspace-down;
+        "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
 
         "Mod+Shift+F".action = fullscreen-window;
         "Mod+F".action = maximize-column;
         "Mod+Minus".action = set-column-width "-10%";
-        "Mod+Equal".action = set-column-width "+10%";
+        "Mod+Shift+Minus".action = set-column-width "+10%";
         "Mod+V".action = toggle-window-floating;
         "Mod+Shift+V".action = switch-focus-between-floating-and-tiling;
         "Mod+W".action = toggle-column-tabbed-display;
@@ -116,6 +116,7 @@
         "Ctrl+Print".action = screenshot;
         "Alt+Print".action = screenshot-window;
         "Mod+P".action = power-off-monitors;
+        "Mod+Shift+M".action = quit;
       };
 
       spawn-at-startup = [
@@ -126,7 +127,7 @@
       ];
 
       input = {
-        focus-follows-mouse.enable = true;
+        focus-follows-mouse.enable = false;
         keyboard.xkb.layout = "ch";
         mouse.accel-profile = "adaptive";
         mouse.natural-scroll = false;
@@ -142,7 +143,7 @@
         focus-ring.enable = false;
 
         shadow = {
-          enable = true;
+          enable = false;
           draw-behind-window = false;
         };
         insert-hint.enable = true;

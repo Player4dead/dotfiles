@@ -5,7 +5,7 @@
       enable = true;
     };
     gamescope = {
-      package = pkgs-stable.gamescope;
+      #package = pkgs-stable.gamescope;
       enable = true;
       capSysNice = false;
     };
