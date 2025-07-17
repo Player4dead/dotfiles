@@ -18,7 +18,6 @@
 
     nixd
     keepassxc
-    #lmms
     vdhcoapp
     monero-gui
     godot
@@ -27,14 +26,14 @@
     kdePackages.kdenlive
     blender-hip
     cava
-    pcmanfm
+    #pcmanfm
     yt-dlp
     activate-linux
     pkgs-stable.lmms
     fastfetch
+    ffmpeg-full
 
     inputs.zen-browser.packages."${system}".specific
-    #inputs.xwayland.packages.x86_64-linux.default
     xwayland-satellite
 
     ];

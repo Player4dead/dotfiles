@@ -11,7 +11,6 @@
      ./nh.nix
      ./sound.nix
      ./../configuration.nix
-     ./hyprland.nix
      ./stylix.nix
      ./sops.nix
      ./autologin.nix

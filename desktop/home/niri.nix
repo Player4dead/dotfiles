@@ -1,28 +1,28 @@
-{
-  pkgs,
-  inputs,
-  config,
-  lib,
-  ...
-}:
+{ pkgs, inputs, config, lib, ... }:
 {
 
 home.packages = with pkgs; [
-  xdg-desktop-portal-gnome
+  libnotify
+  swww
+  kitty
+  networkmanagerapplet
+  udiskie
+  fuzzel
 ];
+
+xdg.portal = {
+  enable = true;
+  extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+};
 
   programs.swaylock.enable = true;
   services.mako.enable = true;
 
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 
-  #xdg.configFile."niri/config.kdl".source = ./config.kdl;
-
   programs.niri = {
     package = pkgs.niri-unstable;
     enable = true;
-
-    #config = null;
 
     settings = {
       prefer-no-csd = true;

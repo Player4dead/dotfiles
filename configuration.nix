@@ -3,15 +3,8 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { pkgs, ... }: {
-  #services.mysql = {
-    #enable = true;
-    #package = pkgs.mariadb;
-  #};
 
-xdg.portal = {
-  enable = true;
-  extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
-};
+  services.udisks2.enable = true;
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   services.blueman.enable = true;

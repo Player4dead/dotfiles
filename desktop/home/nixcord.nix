@@ -17,7 +17,8 @@
           emoteCloner.enable = true;
           silentTyping.enable = true;
           imageZoom.enable = true;
-        };
+          fullSearchContext.enable = true;
+          };
       };
     };
 }
