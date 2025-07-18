@@ -16,7 +16,6 @@ programs.zsh = {
     ohMyZsh = {
       enable = true;
       plugins = [
-        "thefuck"
         "z"
       ];
       theme = "darkblood";
@@ -24,5 +23,4 @@ programs.zsh = {
 
   };
 
-programs.thefuck.enable = true;
 }
