@@ -6,7 +6,6 @@
      ./kitty.nix
      ./nixcord.nix
      ./niri.nix
-     ./zsh.nix
    ];
 
 }

@@ -14,6 +14,7 @@
      ./stylix.nix
      ./sops.nix
      ./autologin.nix
+     ./zsh.nix
      ];
 
 }
