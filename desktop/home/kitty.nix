@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs,  ... }:
 {
 
   programs.kitty = lib.mkForce {
@@ -6,8 +6,14 @@
     settings = {
       confirm_os_window_close = 0;
       background_opacity = "0.7";
-      background_blur = 5;
+      background_blur = 1;
       dynamic_background_opacity = true;
+    };
+
+    font = {
+      name = "ComicMono";
+      package = pkgs.comic-mono;
+      size = 12;
     };
   };
 

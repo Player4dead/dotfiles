@@ -17,6 +17,7 @@
           emoteCloner.enable = true;
           silentTyping.enable = true;
           imageZoom.enable = true;
+          betterUploadButton.enable = true;
           fullSearchContext.enable = true;
           };
       };

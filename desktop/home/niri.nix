@@ -124,6 +124,7 @@ xdg.portal = {
         { command = [ "zen" ]; }
         { command = [ "discord" ]; }
         { command = [ "udiskie -a -n" ]; }
+        { command = [ "swww-daemon" ]; }
       ];
 
       input = {
@@ -131,7 +132,7 @@ xdg.portal = {
         keyboard.xkb.layout = "ch";
         mouse.accel-profile = "adaptive";
         mouse.natural-scroll = false;
-        warp-mouse-to-focus.enable = false;
+        warp-mouse-to-focus.enable = true;
       };
 
       layout = {
