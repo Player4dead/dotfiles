@@ -18,7 +18,7 @@ programs.zsh = {
       plugins = [
         "z"
       ];
-      theme = "darkblood";
+      theme = "fox";
     };
 
   };
