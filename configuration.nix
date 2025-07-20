@@ -9,8 +9,10 @@
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   services.blueman.enable = true;
 
-
-  fonts.packages = with pkgs; [ junicode ];
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [ comic-mono ];
+  };
 
   services.gvfs.enable = true;
 

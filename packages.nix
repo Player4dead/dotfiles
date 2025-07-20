@@ -32,6 +32,7 @@
     pkgs-stable.lmms
     fastfetch
     ffmpeg-full
+    easyeffects
 
     inputs.zen-browser.packages."${system}".specific
     xwayland-satellite
