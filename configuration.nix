@@ -4,6 +4,8 @@
 
 { pkgs, ... }: {
 
+  security.pam.services.swaylock = {};
+
   services.udisks2.enable = true;
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth

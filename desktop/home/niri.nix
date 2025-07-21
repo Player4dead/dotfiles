@@ -69,6 +69,7 @@ xdg.portal = {
         "XF86AudioLowerVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-";
         "Mod+C".action = close-window; 
         "Mod+Plus".action = set-column-width "+10%";
+        "Mod+Shift+L".action = spawn "swaylock";
 
         "Mod+Left".action = focus-column-left;
         "Mod+Down".action = focus-window-down;
