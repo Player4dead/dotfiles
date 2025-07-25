@@ -68,26 +68,17 @@ xdg.portal = {
         "XF86AudioRaiseVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
         "XF86AudioLowerVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-";
         "Mod+C".action = close-window; 
-        "Mod+Plus".action = set-column-width "+10%";
-        "Mod+Shift+L".action = spawn "swaylock";
+        "Mod+L".action = spawn "swaylock";
 
         "Mod+Left".action = focus-column-left;
         "Mod+Down".action = focus-window-down;
         "Mod+Up".action = focus-window-up;
         "Mod+Right".action = focus-column-right;
-        "Mod+H".action = focus-column-left;
-        "Mod+J".action = focus-window-down;
-        "Mod+K".action = focus-window-up;
-        "Mod+L".action = focus-column-right;
 
         "Mod+Ctrl+Left".action = move-column-left;
         "Mod+Ctrl+Down".action = move-window-down;
         "Mod+Ctrl+Up".action = move-window-up;
         "Mod+Ctrl+Right".action = move-column-right;
-        "Mod+Ctrl+H".action = move-column-left;
-        "Mod+Ctrl+J".action = move-window-down;
-        "Mod+Ctrl+K".action = move-window-up;
-        "Mod+Ctrl+L".action = move-column-right;
 
         "Mod+Shift+Left".action = move-column-to-monitor-left;
         "Mod+Shift+Right".action = move-column-to-monitor-right;
@@ -114,9 +105,7 @@ xdg.portal = {
         "Mod+Shift+V".action = switch-focus-between-floating-and-tiling;
         "Mod+W".action = toggle-column-tabbed-display;
         "Print".action = screenshot;
-        "Ctrl+Print".action = screenshot;
         "Alt+Print".action = screenshot-window;
-        "Mod+P".action = power-off-monitors;
         "Mod+Shift+M".action = quit;
       };
 
@@ -142,12 +131,12 @@ xdg.portal = {
           enable = true;
           width = 4;
         };
+        tab-indicator = {
+          enable = true;
+          corner-radius = 2.0;
+        };
         focus-ring.enable = false;
 
-        shadow = {
-          enable = false;
-          draw-behind-window = false;
-        };
         insert-hint.enable = true;
       };
 

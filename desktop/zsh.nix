@@ -17,6 +17,7 @@ programs.zsh = {
       enable = true;
       plugins = [
         "z"
+        "fasd"
         "extract"
       ];
       theme = "fox";

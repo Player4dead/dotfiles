@@ -24,10 +24,16 @@
       ];
     })
     
-    lutris
     mangohud
     protonup-qt
     protonup
+
+    (lutris.override {
+       extraPkgs = pkgs: [
+         wineWowPackages.stable
+         winetricks
+       ];
+    })
   ];
 }
 

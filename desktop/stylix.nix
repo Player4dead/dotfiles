@@ -13,8 +13,8 @@
           name = "ComicMono";
         };
         sansSerif = {
-          package = pkgs.comic-mono;
-          name = "ComicMono";
+          package = pkgs.source-sans;
+          name = "SourceSans3";
         };
        };
 

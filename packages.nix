@@ -10,7 +10,6 @@
     git
     yazi
     tor-browser
-    floorp
     pavucontrol
     sops
     jmtpfs
@@ -19,24 +18,19 @@
     nixd
     keepassxc
     vdhcoapp
-    monero-gui
     godot
     mindustry-wayland
-    xarchiver
     kdePackages.kdenlive
     blender-hip
     cava
-    #pcmanfm
+    pcmanfm
     yt-dlp
-    activate-linux
     pkgs-stable.lmms
-    fastfetch
     ffmpeg-full
     easyeffects
 
     inputs.zen-browser.packages."${system}".specific
     xwayland-satellite
-
     ];
 
 }

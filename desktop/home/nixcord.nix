@@ -3,7 +3,8 @@
   enable = true;
     config = {
       themeLinks = [
-        "https://capnkitten.github.io/BetterDiscord/Themes/Material-Discord/css/source.css"
+        "https://raw.githubusercontent.com/B4T3S/DiscordDarkNeon/refs/heads/master/DarkNeon.theme.css"
+        "https://saltssaumure.github.io/pios-discord-theme/piOS.theme.css"
       ];
 
       frameless = true;

@@ -10,11 +10,6 @@
       dynamic_background_opacity = true;
     };
 
-    font = {
-      name = "ComicMono";
-      package = pkgs.comic-mono;
-      size = 12;
-    };
   };
 
 }
