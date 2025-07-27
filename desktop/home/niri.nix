@@ -1,4 +1,4 @@
-{ pkgs, inputs, config, lib, ... }:
+{ pkgs, pkgs-stable, inputs, config, lib, system, ... }:
 {
 
 home.packages = with pkgs; [
@@ -10,10 +10,11 @@ home.packages = with pkgs; [
   fuzzel
 ];
 
-xdg.portal = {
-  enable = true;
-  extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
-};
+#xdg.portal = {
+  #enable = true;
+  #xdgOpenUsePortal = true;
+  #extraPortals = [ pkgs.xdg-desktop-portal-gnome pkgs.xdg-desktop-portal-gtk ];
+#};
 
   programs.swaylock.enable = true;
   services.mako.enable = true;

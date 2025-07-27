@@ -14,13 +14,13 @@
     sops
     jmtpfs
     waybar
+    fastfetch
 
     nixd
     keepassxc
     vdhcoapp
     godot
     mindustry-wayland
-    kdePackages.kdenlive
     blender-hip
     cava
     pcmanfm

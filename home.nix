@@ -1,4 +1,4 @@
-{
+{ pkgs-stable, ... }: {
 
   programs.git = {
     enable = true;
@@ -11,6 +11,9 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  home.packages = [
+    pkgs-stable.hello
+  ];
   home.stateVersion = "25.05";
 
 }

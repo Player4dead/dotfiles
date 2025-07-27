@@ -50,6 +50,11 @@
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
+      pkgs-stable = import legacynixpgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+
     in
     {
       nixosConfigurations = {
@@ -58,11 +63,7 @@
           specialArgs = {
             inherit inputs;
             inherit system;
-
-            pkgs-stable = import legacynixpgs {
-              inherit system;
-              config.allowUnfree = true;
-            };
+            inherit pkgs-stable;
           };
 
           modules = [
@@ -83,6 +84,8 @@
               home-manager.extraSpecialArgs = {
                 inherit inputs;
                 inherit system;
+                inherit pkgs-stable;
+
               };
               home-manager.backupFileExtension = "backup";
 

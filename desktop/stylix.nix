@@ -4,7 +4,10 @@
   stylix = {
     enable = true;
     autoEnable = true;
-    image = ./youjo-senki-wallpapers.png;
+    image = pkgs.fetchurl {
+      url = "https://images5.alphacoders.com/792/thumb-1920-792410.png";
+      hash = "sha256-Aa8BM4AU+VZfh7pNVrR6r5VUjikUtPr17NCkFQi0OKo=";
+    };
     polarity = "dark";
 
       fonts = {

@@ -4,6 +4,13 @@
 
 { pkgs, ... }: {
 
+xdg.portal = {
+  enable = true;
+  xdgOpenUsePortal = true;
+  extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+  config.common.default = "*";
+};
+
   security.pam.services.swaylock = {};
 
   services.udisks2.enable = true;
