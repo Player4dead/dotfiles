@@ -1,5 +1,12 @@
-{ ... }:
+{ pkgs, ... }:
 {
+
+environment.systemPackages = with pkgs; [
+  weechat
+  xd
+];
+
+
   containers.i2pd = {
     autoStart = false;
     config =
@@ -24,6 +31,7 @@
             socksProxy.enable = true;
             httpProxy.enable = true;
             sam.enable = true;
+            i2cp.enable = true;
           };
         };
       };
