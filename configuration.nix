@@ -4,6 +4,22 @@
 
 { pkgs, ... }: {
 
+  services.yggdrasil = {
+    enable = true;
+    persistentKeys = false;
+      # The NixOS module will generate new keys and a new IPv6 address each time
+      # it is started if persistentKeys is not enabled.
+
+    settings = {
+      Peers = [
+        "tls://n.ygg.yt:443"
+        "tls://b.ygg.yt:443"
+        "tcp://s-fra-0.sergeysedoy97.ru:65533"
+        "tls://s-fra-0.sergeysedoy97.ru:65534"
+     ];
+    };
+  };
+
 xdg.portal = {
   enable = true;
   xdgOpenUsePortal = true;

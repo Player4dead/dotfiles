@@ -15,6 +15,8 @@
      ./sops.nix
      ./autologin.nix
      ./zsh.nix
+     ./i2pd.nix
+     ./yggdrasil.nix
      ];
 
 }
