@@ -28,6 +28,7 @@
     pkgs-stable.lmms
     ffmpeg-full
     easyeffects
+    upscaler
 
     inputs.zen-browser.packages."${system}".specific
     xwayland-satellite

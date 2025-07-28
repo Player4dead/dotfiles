@@ -14,7 +14,6 @@
           betterFolders.enable = true;
           plainFolderIcon.enable = true;
           messageLogger.enable = true;
-          fakeNitro.enable = true;
           emoteCloner.enable = true;
           silentTyping.enable = true;
           imageZoom.enable = true;

@@ -11,6 +11,11 @@
         };
         scripts = with pkgs.mpvScripts; [
           uosc
+          visualizer
+          videoclip
+          quality-menu
+          occivink.encode
+          autosub
         ];
       }
     );
