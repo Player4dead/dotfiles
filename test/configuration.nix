@@ -2,31 +2,22 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
+  #services.mysql = {
+    #enable = true;
+    #package = pkgs.mariadb;
+  #};
 
 xdg.portal = {
-    enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-gnome
-    ];
-    xdgOpenUsePortal = true;
-  };
-
-  security.polkit.enable = true;
-
-  security.pam.services.swaylock = { };
-
-  services.udisks2.enable = true;
+  enable = true;
+  extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+};
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   services.blueman.enable = true;
 
-  fonts = {
-    enableDefaultPackages = true;
-    packages = with pkgs; [ comic-mono ];
-  };
+
+  fonts.packages = with pkgs; [ junicode ];
 
   services.gvfs.enable = true;
 
@@ -48,10 +39,7 @@ xdg.portal = {
   # Configure console keymap
   console.keyMap = "sg";
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   system.stateVersion = "24.11"; # Did you read the comment?
 

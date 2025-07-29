@@ -10,30 +10,33 @@
     git
     yazi
     tor-browser
+    floorp
     pavucontrol
     sops
     jmtpfs
     waybar
-    fastfetch
-
-    xdg-desktop-portal-gtk
 
     nixd
     keepassxc
+    #lmms
     vdhcoapp
+    monero-gui
     godot
     mindustry-wayland
+    xarchiver
+    kdePackages.kdenlive
     blender-hip
     cava
     pcmanfm
     yt-dlp
+    activate-linux
     pkgs-stable.lmms
-    ffmpeg-full
-    easyeffects
-    upscaler
+    fastfetch
 
     inputs.zen-browser.packages."${system}".specific
+    #inputs.xwayland.packages.x86_64-linux.default
     xwayland-satellite
+
     ];
 
 }

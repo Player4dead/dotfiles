@@ -1,14 +1,14 @@
-{ pkgs, pkgs-stable, inputs, config, lib, system, ... }:
+{
+  pkgs,
+  inputs,
+  config,
+  lib,
+  ...
+}:
 {
 
 home.packages = with pkgs; [
-  libnotify
-  swww
-  kitty
-  networkmanagerapplet
-  udiskie
-  fuzzel
-  libsForQt5.polkit-kde-agent
+  xdg-desktop-portal-gnome
 ];
 
   programs.swaylock.enable = true;
@@ -16,9 +16,13 @@ home.packages = with pkgs; [
 
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 
+  #xdg.configFile."niri/config.kdl".source = ./config.kdl;
+
   programs.niri = {
     package = pkgs.niri-unstable;
     enable = true;
+
+    #config = null;
 
     settings = {
       prefer-no-csd = true;
@@ -64,17 +68,25 @@ home.packages = with pkgs; [
         "XF86AudioRaiseVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
         "XF86AudioLowerVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-";
         "Mod+C".action = close-window; 
-        "Mod+L".action = spawn "swaylock";
+        "Mod+Plus".action = set-column-width "+10%";
 
         "Mod+Left".action = focus-column-left;
         "Mod+Down".action = focus-window-down;
         "Mod+Up".action = focus-window-up;
         "Mod+Right".action = focus-column-right;
+        "Mod+H".action = focus-column-left;
+        "Mod+J".action = focus-window-down;
+        "Mod+K".action = focus-window-up;
+        "Mod+L".action = focus-column-right;
 
         "Mod+Ctrl+Left".action = move-column-left;
         "Mod+Ctrl+Down".action = move-window-down;
         "Mod+Ctrl+Up".action = move-window-up;
         "Mod+Ctrl+Right".action = move-column-right;
+        "Mod+Ctrl+H".action = move-column-left;
+        "Mod+Ctrl+J".action = move-window-down;
+        "Mod+Ctrl+K".action = move-window-up;
+        "Mod+Ctrl+L".action = move-column-right;
 
         "Mod+Shift+Left".action = move-column-to-monitor-left;
         "Mod+Shift+Right".action = move-column-to-monitor-right;
@@ -101,7 +113,9 @@ home.packages = with pkgs; [
         "Mod+Shift+V".action = switch-focus-between-floating-and-tiling;
         "Mod+W".action = toggle-column-tabbed-display;
         "Print".action = screenshot;
+        "Ctrl+Print".action = screenshot;
         "Alt+Print".action = screenshot-window;
+        "Mod+P".action = power-off-monitors;
         "Mod+Shift+M".action = quit;
       };
 
@@ -110,8 +124,6 @@ home.packages = with pkgs; [
         { command = [ "zen" ]; }
         { command = [ "discord" ]; }
         { command = [ "udiskie -a -n" ]; }
-        { command = [ "swww-daemon" ]; }
-        { command = [ "systemctl --user start plasma-polkit-agent" ]; }
       ];
 
       input = {
@@ -119,7 +131,7 @@ home.packages = with pkgs; [
         keyboard.xkb.layout = "ch";
         mouse.accel-profile = "adaptive";
         mouse.natural-scroll = false;
-        warp-mouse-to-focus.enable = true;
+        warp-mouse-to-focus.enable = false;
       };
 
       layout = {
@@ -128,12 +140,12 @@ home.packages = with pkgs; [
           enable = true;
           width = 4;
         };
-        tab-indicator = {
-          enable = true;
-          corner-radius = 2.0;
-        };
         focus-ring.enable = false;
 
+        shadow = {
+          enable = false;
+          draw-behind-window = false;
+        };
         insert-hint.enable = true;
       };
 
