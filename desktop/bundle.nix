@@ -17,6 +17,7 @@
      ./zsh.nix
      ./i2pd.nix
      ./yggdrasil.nix
+     ./hyprland.nix
      ];
 
 }

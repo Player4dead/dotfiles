@@ -1,4 +1,3 @@
-{ ... }:
 {
 
   containers.yggdrasil = {

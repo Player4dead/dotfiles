@@ -10,11 +10,15 @@ home.packages = with pkgs; [
   fuzzel
 ];
 
-#xdg.portal = {
-  #enable = true;
-  #xdgOpenUsePortal = true;
-  #extraPortals = [ pkgs.xdg-desktop-portal-gnome pkgs.xdg-desktop-portal-gtk ];
-#};
+xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
+    ];
+    config.common.default = "*";
+    xdgOpenUsePortal = true;
+  };
 
   programs.swaylock.enable = true;
   services.mako.enable = true;

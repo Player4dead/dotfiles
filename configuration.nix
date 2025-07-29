@@ -2,32 +2,20 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }: {
-
-  services.yggdrasil = {
-    enable = true;
-    persistentKeys = false;
-      # The NixOS module will generate new keys and a new IPv6 address each time
-      # it is started if persistentKeys is not enabled.
-
-    settings = {
-      Peers = [
-        "tls://n.ygg.yt:443"
-        "tls://b.ygg.yt:443"
-        "tcp://s-fra-0.sergeysedoy97.ru:65533"
-        "tls://s-fra-0.sergeysedoy97.ru:65534"
-     ];
-    };
-  };
+{ pkgs, ... }:
+{
 
 xdg.portal = {
-  enable = true;
-  xdgOpenUsePortal = true;
-  extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
-  config.common.default = "*";
-};
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
+    ];
+    config.common.default = "*";
+    xdgOpenUsePortal = true;
+  };
 
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = { };
 
   services.udisks2.enable = true;
 
@@ -59,7 +47,10 @@ xdg.portal = {
   # Configure console keymap
   console.keyMap = "sg";
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   system.stateVersion = "24.11"; # Did you read the comment?
 
