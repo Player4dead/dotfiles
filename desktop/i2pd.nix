@@ -32,6 +32,8 @@ environment.systemPackages = with pkgs; [
             httpProxy.enable = true;
             sam.enable = true;
             i2cp.enable = true;
+
+            httpProxy.outproxy = "http://exit.stormycloud.i2p";
           };
         };
       };

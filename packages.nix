@@ -15,8 +15,7 @@
     jmtpfs
     waybar
     fastfetch
-
-    xdg-desktop-portal-gtk
+    unzip
 
     nixd
     keepassxc

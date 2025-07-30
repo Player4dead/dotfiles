@@ -12,6 +12,7 @@ xdg.portal = {
       pkgs.xdg-desktop-portal-gnome
     ];
     xdgOpenUsePortal = true;
+    config.common.default = "*";
   };
 
   security.polkit.enable = true;
