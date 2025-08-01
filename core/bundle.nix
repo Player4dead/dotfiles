@@ -1,6 +1,6 @@
 {
 
-  import = [
+  imports = [
   ./autologin.nix
   ./bootloader.nix
   ./nh.nix
