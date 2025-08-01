@@ -58,7 +58,7 @@
     in
     {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        desktop = nixpkgs.lib.nixosSystem {
 
           specialArgs = {
             inherit inputs;
@@ -69,6 +69,8 @@
           modules = [
             ./desktop/bundle.nix
             ./packages.nix
+            ./core/bundle.nix
+
             home-manager.nixosModules.home-manager
             inputs.nvf.nixosModules.default
 
@@ -94,6 +96,25 @@
                 inputs.niri.homeModules.niri
               ];
             }
+          ];
+        };
+
+
+
+        server = nixpkgs.lib.nixosSystem {
+
+          specialArgs = {
+            inherit inputs;
+            inherit system;
+            inherit pkgs-stable;
+          };
+
+          modules = [
+            ./server/bundle.nix
+            ./core/bundle.nix
+            
+            inputs.sops-nix.nixosModules.sops
+            inputs.stylix.nixosModules.stylix
           ];
         };
       };

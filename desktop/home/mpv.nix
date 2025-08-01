@@ -15,7 +15,7 @@
           videoclip
           quality-menu
           occivink.encode
-          autosub
+          #autosub
         ];
       }
     );

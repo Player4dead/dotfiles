@@ -8,11 +8,9 @@
 xdg.portal = {
     enable = true;
     extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
+      #pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal-gnome
     ];
-    xdgOpenUsePortal = true;
-    config.common.default = "*";
   };
 
   security.polkit.enable = true;
@@ -37,16 +35,12 @@ xdg.portal = {
     FLAKE = "/home/player4dead/.dotfiles";
   };
 
-  networking.hostName = "nixos"; # Define your hostname.
-
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Zurich";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Configure console keymap
   console.keyMap = "sg";
 
   nix.settings.experimental-features = [
@@ -54,6 +48,6 @@ xdg.portal = {
     "flakes"
   ];
 
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.11";
 
 }

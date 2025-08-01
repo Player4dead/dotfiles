@@ -11,6 +11,14 @@ home.packages = with pkgs; [
   libsForQt5.polkit-kde-agent
 ];
 
+xdg.portal = {
+    enable = true;
+    extraPortals = [
+      #pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
+    ];
+  };
+
   programs.swaylock.enable = true;
   services.mako.enable = true;
 
