@@ -18,6 +18,7 @@
     ffmpeg-full
     easyeffects
     upscaler
+    obs-studio
 
     inputs.zen-browser.packages."${system}".specific
     xwayland-satellite
