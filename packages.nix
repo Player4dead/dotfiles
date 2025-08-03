@@ -13,6 +13,7 @@
     fastfetch
     unzip
     nixd
+    lynx
     ];
 
 }
