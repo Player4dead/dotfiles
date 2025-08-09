@@ -19,6 +19,7 @@
           imageZoom.enable = true;
           betterUploadButton.enable = true;
           fullSearchContext.enable = true;
+          clearURLs.enable = true;
           };
       };
     };

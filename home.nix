@@ -1,4 +1,4 @@
-{ pkgs-stable, ... }: {
+{ pkgs-stable, pkgs, ... }: {
 
   programs.git = {
     enable = true;
@@ -15,5 +15,18 @@
     pkgs-stable.hello
   ];
   home.stateVersion = "25.05";
+
+
+  xdg.desktopEntries.nemo = {
+    name = "Nemo";
+    exec = "${pkgs.nemo-with-extensions}/bin/nemo";
+  };
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+        "inode/directory" = [ "nemo.desktop" ];
+        "application/x-gnome-saved-search" = [ "nemo.desktop" ];
+    };
+  };
 
 }

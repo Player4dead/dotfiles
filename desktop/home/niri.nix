@@ -65,6 +65,7 @@ home.packages = with pkgs; [
         "XF86AudioLowerVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-";
         "Mod+C".action = close-window; 
         "Mod+L".action = spawn "swaylock";
+        "Mod+Z".action = spawn "zen";
 
         "Mod+Left".action = focus-column-left;
         "Mod+Down".action = focus-window-down;

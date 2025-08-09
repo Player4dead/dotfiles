@@ -3,6 +3,7 @@
     steam = {
       gamescopeSession.enable = true;
       enable = true;
+      protontricks.enable = true;
     };
     gamescope = {
       #package = pkgs-stable.gamescope;
