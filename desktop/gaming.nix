@@ -28,6 +28,7 @@
     mangohud
     protonup-qt
     protonup
+    protontricks
 
     (lutris.override {
        extraPkgs = pkgs: [

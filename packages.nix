@@ -14,7 +14,6 @@
     unzip
     nixd
     lynx
-    protontricks
     ];
 
 }

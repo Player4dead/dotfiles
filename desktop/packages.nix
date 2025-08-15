@@ -1,4 +1,11 @@
-{ pkgs, inputs, pkgs-stable, ... }: {
+{
+  pkgs,
+  inputs,
+  pkgs-stable,
+  system,
+  ...
+}:
+{
 
   nixpkgs.config.allowUnfree = true;
 
@@ -20,8 +27,16 @@
     upscaler
     obs-studio
 
-    inputs.zen-browser.packages."${system}".specific
     xwayland-satellite
+
+    inputs.zen-browser.packages."${system}".default
     ];
+    #inputs.zen-browser.packages."${system}".default.override = {
+      #policies = {
+        #DisableAppUpdate = true;
+        #DisableTelemetry = true;
+        # find more options here: https://mozilla.github.io/policy-templates/
+      #};
+      #};
 
 }
