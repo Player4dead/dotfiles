@@ -2,7 +2,7 @@
 
    imports = [
      ./amd.nix
-     ./extern.nix
+     #./extern.nix
      ./gaming.nix
      ./hardware-configuration.nix
      ./sound.nix

@@ -24,8 +24,6 @@
     pkgs-stable.lmms
     ffmpeg-full
     easyeffects
-    upscaler
-    obs-studio
 
     xwayland-satellite
 

@@ -45,6 +45,7 @@ home.packages = with pkgs; [
         "DP-2" = {
           enable = true;
           focus-at-startup = true;
+          variable-refresh-rate = true;
           mode = {
             height = 1080;
             width = 1920;
