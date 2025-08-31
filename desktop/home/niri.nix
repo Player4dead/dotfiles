@@ -1,15 +1,22 @@
-{ pkgs, pkgs-stable, inputs, config, lib, system, ... }:
+{
+  pkgs,
+  pkgs-stable,
+  inputs,
+  config,
+  lib,
+  system,
+  ...
+}:
 {
 
-home.packages = with pkgs; [
-  libnotify
-  swww
-  kitty
-  networkmanagerapplet
-  udiskie
-  fuzzel
-  libsForQt5.polkit-kde-agent
-];
+  home.packages = with pkgs; [
+    libnotify
+    swww
+    kitty
+    networkmanagerapplet
+    udiskie
+    fuzzel
+  ];
 
   programs.swaylock.enable = true;
   services.mako.enable = true;
@@ -64,7 +71,7 @@ home.packages = with pkgs; [
         "Mod+Space".action = spawn "fuzzel";
         "XF86AudioRaiseVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
         "XF86AudioLowerVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-";
-        "Mod+C".action = close-window; 
+        "Mod+C".action = close-window;
         "Mod+L".action = spawn "swaylock";
         "Mod+Z".action = spawn "zen";
 
@@ -141,7 +148,7 @@ home.packages = with pkgs; [
 
       window-rules = [
         {
-          matches = [{ app-id = "org.keepassxc.KeePassXC"; }];
+          matches = [ { app-id = "org.keepassxc.KeePassXC"; } ];
           block-out-from = "screen-capture";
         }
       ];

@@ -78,7 +78,6 @@
 
             inputs.stylix.nixosModules.stylix
 
-            home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = true;
@@ -92,7 +91,6 @@
               home-manager.backupFileExtension = "backup";
 
               home-manager.sharedModules = [
-                inputs.nixcord.homeModules.nixcord
                 inputs.niri.homeModules.niri
               ];
             }
