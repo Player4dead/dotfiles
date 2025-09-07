@@ -38,6 +38,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    gamescope = {
+      url = "github:nixos/nixpkgs/4e942f9ef5b35526597c354d1ded817d1c285ef1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs =
