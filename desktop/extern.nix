@@ -6,7 +6,7 @@
 
   fileSystems = {
 "/mnt/vault" = {
-  device = "/dev/disk/by-uuid/31e4bcf0-7c5a-4535-a148-869515c972b0";
+  device = "/dev/disk/by-uuid/e59b596e-4b05-4b17-b22e-5c7bf6f25f83";
   fsType = "btrfs";
   options = [
     "defaults"

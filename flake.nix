@@ -79,8 +79,6 @@
             home-manager.nixosModules.home-manager
             inputs.nvf.nixosModules.default
 
-            inputs.sops-nix.nixosModules.sops
-
             inputs.stylix.nixosModules.stylix
 
             {

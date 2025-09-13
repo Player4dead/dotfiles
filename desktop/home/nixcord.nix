@@ -23,6 +23,7 @@
           clearURLs.enable = true;
           showHiddenThings.enable = true;
           showHiddenChannels.enable = true;
+          reviewDB.enable = true;
           };
       };
     };

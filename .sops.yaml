@@ -2,7 +2,7 @@ keys:
   - &primary_key age1288pd00x2zq8r486mk3cm2tctfk70a49l9rwsjsukemengx0z4uqslvx4y
 
 creation_rules:
-  - path_regex: secrets/secrets.ini$
+  - path_regex: secrets/secrets.yaml$
     key_groups:
       - age:
         - *primary_key
