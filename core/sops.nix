@@ -6,6 +6,4 @@ imports = [ inputs.sops-nix.nixosModules.sops ];
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/home/player4dead/.config/sops/age/keys.txt";
 
-  sops.secrets."myservice/my_subdir/my_secret" = {};
-
 }
