@@ -1,0 +1,27 @@
+{ inputs, ... }:
+{
+
+  flake.nixosModules.nvf =
+    { pkgs, ... }:
+    {
+      imports = [ inputs.nvf.nixosModules.nvf ];
+      environment.systemPackages = with pkgs; [ nixd ];
+      programs.nvf = {
+        enable = true;
+        settings.vim = {
+          autocomplete.nvim-cmp.enable = true;
+          lsp.enable = true;
+
+          languages = {
+            nix = {
+              enable = true;
+              extraDiagnostics.enable = true;
+              lsp.enable = true;
+            };
+          };
+        };
+      };
+      # set nvim to default text editor
+      environment.variables.EDITOR = "nvim";
+    };
+}
