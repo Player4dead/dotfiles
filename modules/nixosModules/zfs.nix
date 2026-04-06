@@ -18,11 +18,20 @@
           pools = [ ]; # empty to scrub everything
           interval = "monthly";
         };
-        autoSnapshot.enable = true;
-
         trim = {
           enable = true;
           interval = "weekly";
+        };
+      };
+
+      services.sanoid = {
+        enable = true;
+
+        datasets."zroot/vault" = {
+          haurly = 10;
+          daily = 5;
+          weekly = 3;
+          monthly = 1;
         };
       };
     };

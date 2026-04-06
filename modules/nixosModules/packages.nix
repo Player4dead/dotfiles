@@ -41,6 +41,7 @@
           qbittorrent
 
           hexchat
+          easyeffects
 
           ryubing
           inputs.zen-browser.packages.${pkgs.system}.default

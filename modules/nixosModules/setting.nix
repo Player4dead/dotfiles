@@ -10,5 +10,7 @@
 
       i18n.defaultLocale = "de_CH.UTF-8";
       console.keyMap = "sg";
+
+      boot.tmp.cleanOnBoot = true;
     };
 }
