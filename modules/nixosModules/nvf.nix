@@ -13,11 +13,20 @@
           lsp.enable = true;
 
           languages = {
+            enableFormat = true;
             nix = {
               enable = true;
               extraDiagnostics.enable = true;
               lsp.enable = true;
+
+              format = {
+                enable = true;
+                type = [ "nixfmt" ];
+              };
             };
+          };
+          lsp = {
+            formatOnSave = true;
           };
         };
       };
