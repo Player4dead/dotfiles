@@ -27,7 +27,7 @@
             };
 
             binds = {
-              "Mod+Q".spawn = "kitty";
+              "Mod+Q".spawn = "alacritty";
               "Mod+Space".spawn = "fuzzel";
               "Mod+C".close-window = null;
               "Mod+Z".spawn = "zen";
@@ -56,7 +56,7 @@
               "Mod+L".spawn = "swaylock";
               "Mod+Shift+M".quit = null;
               "Mod+Tab".toggle-overview = null;
-              "Mod+E".spawn-sh = "kitty -e yazi";
+              "Mod+E".spawn-sh = "alacritty -e yazi";
               "Print".screenshot = null;
             };
             spawn-at-startup = [
@@ -128,7 +128,6 @@
             };
 
             include = "${./niri-animation.kdl}";
-
 
           };
         }).wrapper;

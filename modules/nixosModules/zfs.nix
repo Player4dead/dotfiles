@@ -28,8 +28,8 @@
         enable = true;
 
         datasets."zroot/vault" = {
-          haurly = 10;
-          daily = 5;
+          hourly = 50;
+          daily = 15;
           weekly = 3;
           monthly = 1;
         };

@@ -6,7 +6,8 @@
     {
       environment.systemPackages = with pkgs; [
         jmtpfs
-        kitty
+        # kitty
+        alacritty
         networkmanagerapplet
         udiskie
         mpvpaper

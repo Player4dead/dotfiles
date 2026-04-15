@@ -16,7 +16,7 @@
             # Exposing the nessecary ports in order to interact with i2p from outside the container
             networking.firewall.allowedTCPPorts = [
               7656 # default sam port
-              7070 # default web interface port
+              # 7070 # default web interface port
               4447 # default socks proxy port
               4444 # default http proxy port
             ];
