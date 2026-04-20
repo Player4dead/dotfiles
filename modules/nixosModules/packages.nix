@@ -15,6 +15,7 @@
           yazi
           unzip
           lynx
+          tmux
         ];
       };
 
@@ -64,7 +65,6 @@
           })
 
           inputs.stable.legacyPackages.x86_64-linux.kdePackages.kdenlive
-
 
         ];
       };

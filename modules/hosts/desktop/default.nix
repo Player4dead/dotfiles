@@ -30,7 +30,7 @@
       self.nixosModules.settings
       self.nixosModules.swap
       self.nixosModules.zfs
-      # self.nixosModules.ygg
+      self.nixosModules.ygg
       self.nixosModules.tablet
       # self.nixosModules.virt
     ];
