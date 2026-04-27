@@ -32,6 +32,7 @@
           nomacs
           revolt-desktop
           fluffychat
+          element-desktop
 
           keepassxc
           pavucontrol
