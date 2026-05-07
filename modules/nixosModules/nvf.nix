@@ -24,6 +24,13 @@
                 type = [ "nixfmt" ];
               };
             };
+
+            bash = {
+              enable = true;
+              extraDiagnostics.enable = true;
+              lsp.enable = true;
+              format.enable = true;
+            };
           };
           lsp = {
             formatOnSave = true;

@@ -7,11 +7,11 @@
       environment.systemPackages = with pkgs; [
         jmtpfs
         # kitty
-        alacritty
+        # alacritty
         networkmanagerapplet
         udiskie
         mpvpaper
-        fuzzel
+        # fuzzel
         swaylock
 
         xwayland-satellite
@@ -20,7 +20,7 @@
       security.pam.services.swaylock = { };
       programs.niri = {
         enable = true;
-        package = self.packages.${pkgs.system}.niri;
+        package = self.packages.${pkgs.system}.myNiri;
       };
 
       xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
