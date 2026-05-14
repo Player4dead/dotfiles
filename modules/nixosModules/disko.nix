@@ -1,7 +1,10 @@
 { inputs, ... }:
 {
 
-  flake.diskoConfigurations = {
+  flake.diskoConfigurations.desktop = {
+    imports = [
+      inputs.disko.flakeModules.default
+    ];
     fileSystems."/nix".neededForBoot = true;
 
     disko.devices = {
