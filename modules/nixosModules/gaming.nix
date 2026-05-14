@@ -6,9 +6,9 @@
     {
       programs = {
         steam = {
-          gamescopeSession.enable = true;
+          # gamescopeSession.enable = true;
           enable = true;
-          protontricks.enable = true;
+          # protontricks.enable = true;
         };
         gamescope = {
           enable = true;
@@ -31,8 +31,16 @@
         protonup-qt
         protontricks
 
-        lutris
+        (lutris.override {
+          # List of additional system libraries
+          extraLibraries = pkgs: [ winetricks ];
 
+          # List of additional system packages
+          extraPkgs = pkgs: [
+            winetricks
+            wine
+          ];
+        })
       ];
     };
 }

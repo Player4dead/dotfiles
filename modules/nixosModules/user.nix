@@ -4,12 +4,21 @@
   flake.nixosModules.user =
     { pkgs, config, ... }:
     {
-      users.users.player4dead = {
-        shell = pkgs.zsh;
-        isNormalUser = true;
-        extraGroups = [ "wheel" ];
 
-        hashedPasswordFile = config.sops.secrets.password.path;
+      users = {
+        mutableUsers = false;
+        users = {
+          root.initialPassword = "passwd";
+
+          player = {
+            shell = pkgs.zsh;
+            isNormalUser = true;
+            extraGroups = [ "wheel" ];
+            initialPassword = "passwd";
+
+            hashedPasswordFile = config.sops.secrets.password.path;
+          };
+        };
       };
 
       sops.secrets.password.neededForUsers = true;

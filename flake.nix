@@ -26,7 +26,22 @@
       url = "github:kaylorben/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
+
+    preservation.url = "github:nix-community/preservation";
   };
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
+  outputs =
+    inputs@{ flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } ({
+
+      # (inputs.import-tree ./modules);
+
+      imports = [
+        inputs.disko.flakeModules.default
+        (inputs.import-tree ./modules)
+      ];
+    });
 }

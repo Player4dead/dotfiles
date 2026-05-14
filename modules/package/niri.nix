@@ -32,7 +32,7 @@
             "Mod+Z".spawn = lib.getExe inputs.zen-browser.packages.${pkgs.system}.default;
             "Mod+E".spawn-sh = "${lib.getExe pkgs.alacritty} -e ${lib.getExe pkgs.yazi}";
 
-            "Mod+L".spawn = "${lib.getExe self'.packages.myNoctalia} ipc call lockScreen lock";
+            "Mod+L".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call lockScreen lock";
 
             "Mod+Left".focus-column-or-monitor-left = _: { };
             "Mod+Down".focus-window-or-workspace-down = _: { };
@@ -61,10 +61,11 @@
           };
           spawn-at-startup = [
             (lib.getExe self'.packages.myNoctalia)
+
             "zen"
 
             [
-              "udiskie"
+              "${lib.getExe' pkgs.udiskie "udiskie"}"
               "-a"
               "-n"
             ]
@@ -75,7 +76,7 @@
 
             [
 
-              "mpvpaper"
+              "${lib.getExe pkgs.mpvpaper}"
               "-o"
               "--no-audio --loop-file=inf --no-keepaspect"
               "ALL"

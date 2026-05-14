@@ -33,6 +33,7 @@
       self.nixosModules.ygg
       self.nixosModules.tablet
       # self.nixosModules.virt
+      self.nixosModules.preservation
     ];
 
     networking.hostName = "desktop";

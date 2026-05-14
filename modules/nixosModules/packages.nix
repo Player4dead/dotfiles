@@ -42,6 +42,8 @@
           ffmpeg-full
           qbittorrent
 
+          lmms
+
           hexchat
           easyeffects
 
