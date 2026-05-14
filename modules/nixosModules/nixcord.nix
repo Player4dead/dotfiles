@@ -8,7 +8,7 @@
 
       programs.nixcord = {
         enable = true;
-        user = "player4dead";
+        user = "player";
         config = {
           themeLinks = [
             "https://refact0r.github.io/midnight-discord/build/midnight.css"

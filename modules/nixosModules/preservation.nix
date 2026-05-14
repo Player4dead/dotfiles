@@ -15,6 +15,7 @@
           "/etc/nixos"
           "/var/lib/bluetooth"
           "/var/lib/NetworkManager"
+          "/etc/NetworkManager"
           {
             directory = "/var/lib/nixos";
             inInitrd = true;
@@ -32,12 +33,28 @@
         users.player = {
           directories = [
             "nixos"
-            #     ".ssh"
+            ".config/OpenTabletDriver"
+            ".config/Vencord"
+            ".config/zen"
+            ".config/discord"
+            ".config/noctalia"
+            ".config/librewolf"
+            ".ssh"
+            "'.tor project'"
+            ".local/share/Steam"
+            ".config/keepassxc"
             #     ".mozilla"
           ];
           #
           files = [
+            ".zsh_history"
+            ".zshrc"
+            ".config/kritac"
+            {
+              file = ".config/sops/age/keys.txt";
 
+              inInitrd = true;
+            }
           ];
         };
       };

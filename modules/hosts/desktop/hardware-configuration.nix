@@ -2,18 +2,12 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 {
-  config,
-  lib,
-  pkgs,
-  modulesPath,
-  ...
-}:
 
-{
   flake.nixosModules.hardware =
     {
       config,
       lib,
+      pkgs,
       modulesPath,
       ...
     }:
@@ -34,39 +28,60 @@
       boot.extraModulePackages = [ ];
 
       fileSystems."/" = {
-        device = "/dev/mapper/luks-2edb10ad-1629-48c4-8cda-dbca45276ce4";
-        fsType = "ext4";
+        device = "tmpfs";
+        fsType = "tmpfs";
+        neededForBoot = true;
+        options = [
+          "mode=775"
+          "size=2G"
+        ];
       };
 
-      boot.initrd.luks.devices."luks-2edb10ad-1629-48c4-8cda-dbca45276ce4".device =
-        "/dev/disk/by-uuid/2edb10ad-1629-48c4-8cda-dbca45276ce4";
+      fileSystems."/cache" = {
+        device = "zroot/cache";
+        fsType = "zfs";
+        neededForBoot = true;
+      };
+      fileSystems."/steam" = {
+        device = "zroot/steam";
+        fsType = "zfs";
+      };
+
+      fileSystems."/tmp" = {
+        device = "zroot/tmp";
+        fsType = "zfs";
+        neededForBoot = true;
+      };
+
+      fileSystems."/nix" = {
+        device = "zroot/nix";
+        fsType = "zfs";
+        neededForBoot = true;
+      };
+
+      fileSystems."/persist" = {
+        device = "zroot/persist";
+        fsType = "zfs";
+        neededForBoot = true;
+      };
+
+      fileSystems."/vault" = {
+        device = "extern/vault";
+        fsType = "zfs";
+      };
+
+      fileSystems."/games" = {
+        device = "extern/games";
+        fsType = "zfs";
+      };
 
       fileSystems."/boot" = {
-        device = "/dev/disk/by-uuid/9CA6-FDF3";
+        device = "/dev/disk/by-uuid/199F-164B";
         fsType = "vfat";
         options = [
           "fmask=0022"
           "dmask=0022"
         ];
-      };
-
-      fileSystems."/mnt/games" = {
-        device = "zroot/games";
-        fsType = "zfs";
-        options = [
-          "nofail"
-          "zfsutil"
-        ];
-      };
-
-      fileSystems."/mnt/vault" = {
-        device = "zroot/vault";
-        fsType = "zfs";
-        options = [
-          "nofail"
-          "zfsutil"
-        ];
-
       };
 
       swapDevices = [ ];

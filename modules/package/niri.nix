@@ -70,8 +70,6 @@
               "-n"
             ]
 
-            "discord"
-
             "otd-daemon"
 
             [
@@ -80,7 +78,7 @@
               "-o"
               "--no-audio --loop-file=inf --no-keepaspect"
               "ALL"
-              "/home/player4dead/Videos/wallpaper.mp4"
+              "/vault/wallpaper/wallpaper.mp4"
             ]
           ];
 

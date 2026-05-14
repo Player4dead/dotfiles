@@ -6,7 +6,7 @@
     {
       programs.nh = {
         enable = true;
-        flake = "/home/player4dead/nixos";
+        flake = "/home/player/nixos";
       };
     };
 }

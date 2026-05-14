@@ -6,6 +6,15 @@
   };
 
   flake.nixosModules.desktopmain = {
+
+    programs.dconf.enable = true;
+    programs.dconf.profiles.user.databases = [
+      {
+        lockAll = true;
+        settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+      }
+    ];
+
     imports = [
       self.nixosModules.user
       self.nixosModules.hardware
@@ -28,7 +37,7 @@
       self.nixosModules.nh
       self.nixosModules.nix
       self.nixosModules.settings
-      self.nixosModules.swap
+      # self.nixosModules.swap
       self.nixosModules.zfs
       self.nixosModules.ygg
       self.nixosModules.tablet
