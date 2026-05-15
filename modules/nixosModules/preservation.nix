@@ -16,6 +16,7 @@
           "/var/lib/bluetooth"
           "/var/lib/NetworkManager"
           "/etc/NetworkManager"
+          "/var/lib/i2pd"
           {
             directory = "/var/lib/nixos";
             inInitrd = true;
@@ -40,8 +41,8 @@
             ".config/noctalia"
             ".config/librewolf"
             ".ssh"
-            "'.tor project'"
-            ".local/share/Steam"
+            ".tor project"
+            # ".local/share/Steam"
             ".config/keepassxc"
             #     ".mozilla"
           ];

@@ -42,7 +42,8 @@
         fsType = "zfs";
         neededForBoot = true;
       };
-      fileSystems."/steam" = {
+
+      fileSystems."/home/player/.local/share/Steam" = {
         device = "zroot/steam";
         fsType = "zfs";
       };
