@@ -46,6 +46,7 @@
       self.nixosModules.tablet
       # self.nixosModules.virt
       self.nixosModules.preservation
+      self.nixosModules.sanoid
     ];
 
     networking.hostName = "meschi";
