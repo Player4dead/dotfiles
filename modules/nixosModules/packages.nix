@@ -64,9 +64,6 @@
             config.rocmSupport = true;
             config.cudaSupport = false;
           })
-
-          inputs.stable.legacyPackages.x86_64-linux.kdePackages.kdenlive
-
         ];
       };
   };

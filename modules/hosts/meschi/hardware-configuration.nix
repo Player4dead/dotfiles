@@ -3,7 +3,7 @@
 # to /etc/nixos/configuration.nix instead.
 {
 
-  flake.nixosModules.hardware =
+  flake.nixosModules.meschihardware =
     {
       config,
       lib,

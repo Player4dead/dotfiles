@@ -6,6 +6,7 @@
 
     boot.tmp.cleanOnBoot = true;
     security.sudo.extraConfig = "Defaults lecture=never";
+    boot.zfs.forceImportRoot = true;
 
     preservation = {
       enable = true;
@@ -19,23 +20,17 @@
 
         "/cache" = {
           directories = [
-            "/etc/nixos"
             "/var/lib/bluetooth"
             "/var/lib/NetworkManager"
             "/etc/NetworkManager"
             "/var/lib/i2pd"
+            "/var/cache/tailscale"
+            "/var/lib/tailscale"
             {
               directory = "/var/lib/nixos";
               inInitrd = true;
             }
           ];
-
-          # files = [
-          #   {
-          #     file = "/etc/machine-id";
-          #     inInitrd = true;
-          #   }
-          # ];
 
           # Preserve user files
           users.player = {

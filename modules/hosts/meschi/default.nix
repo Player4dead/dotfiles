@@ -1,11 +1,11 @@
 { inputs, self, ... }:
 {
 
-  flake.nixosConfigurations.desktop = inputs.nixpkgs.lib.nixosSystem {
-    modules = [ self.nixosModules.desktopmain ];
+  flake.nixosConfigurations.meschi = inputs.nixpkgs.lib.nixosSystem {
+    modules = [ self.nixosModules.meschi ];
   };
 
-  flake.nixosModules.desktopmain = {
+  flake.nixosModules.meschi = {
 
     programs.dconf.enable = true;
     programs.dconf.profiles.user.databases = [
@@ -20,7 +20,7 @@
 
     imports = [
       self.nixosModules.user
-      self.nixosModules.hardware
+      self.nixosModules.meschihardware
       self.nixosModules.amd
       self.nixosModules.login
       self.nixosModules.niri
@@ -48,7 +48,7 @@
       self.nixosModules.preservation
     ];
 
-    networking.hostName = "desktop";
+    networking.hostName = "meschi";
   };
 
 }
