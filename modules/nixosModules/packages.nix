@@ -31,8 +31,6 @@
 
           nomacs
           revolt-desktop
-          fluffychat
-          element-desktop
 
           keepassxc
           pavucontrol
@@ -48,7 +46,7 @@
           easyeffects
 
           ryubing
-          inputs.zen-browser.packages.${pkgs.system}.default
+          inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
           librewolf
 
           # to do: own package

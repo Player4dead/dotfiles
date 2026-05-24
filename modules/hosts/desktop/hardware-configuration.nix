@@ -16,73 +16,79 @@
         (modulesPath + "/installer/scan/not-detected.nix")
       ];
 
-      boot.initrd.availableKernelModules = [
-        "nvme"
-        "xhci_pci"
-        "ahci"
-        "usbhid"
-        "sd_mod"
-      ];
-      boot.initrd.kernelModules = [ ];
-      boot.kernelModules = [ "kvm-amd" ];
-      boot.extraModulePackages = [ ];
-
-      fileSystems."/" = {
-        device = "tmpfs";
-        fsType = "tmpfs";
-        neededForBoot = true;
-        options = [
-          "mode=775"
-          "size=2G"
-        ];
+      boot = {
+        initrd = {
+          availableKernelModules = [
+            "nvme"
+            "xhci_pci"
+            "ahci"
+            "usbhid"
+            "sd_mod"
+          ];
+          kernelModules = [ ];
+        };
+        kernelModules = [ "kvm-amd" ];
+        extraModulePackages = [ ];
       };
 
-      fileSystems."/cache" = {
-        device = "zroot/cache";
-        fsType = "zfs";
-        neededForBoot = true;
-      };
+      fileSystems = {
+        "/" = {
+          device = "tmpfs";
+          fsType = "tmpfs";
+          neededForBoot = true;
+          options = [
+            "mode=775"
+            "size=2G"
+          ];
+        };
 
-      fileSystems."/home/player/.local/share/Steam" = {
-        device = "zroot/steam";
-        fsType = "zfs";
-      };
+        "/cache" = {
+          device = "zroot/cache";
+          fsType = "zfs";
+          neededForBoot = true;
+        };
 
-      fileSystems."/tmp" = {
-        device = "zroot/tmp";
-        fsType = "zfs";
-        neededForBoot = true;
-      };
+        "/steam" = {
+          device = "zroot/steam";
+          fsType = "zfs";
+        };
 
-      fileSystems."/nix" = {
-        device = "zroot/nix";
-        fsType = "zfs";
-        neededForBoot = true;
-      };
+        "/tmp" = {
+          device = "zroot/tmp";
+          fsType = "zfs";
+          neededForBoot = true;
+        };
 
-      fileSystems."/persist" = {
-        device = "zroot/persist";
-        fsType = "zfs";
-        neededForBoot = true;
-      };
+        "/nix" = {
+          device = "zroot/nix";
+          fsType = "zfs";
+          neededForBoot = true;
+        };
 
-      fileSystems."/vault" = {
-        device = "extern/vault";
-        fsType = "zfs";
-      };
+        "/persist" = {
+          device = "zroot/persist";
+          fsType = "zfs";
+          neededForBoot = true;
+        };
 
-      fileSystems."/games" = {
-        device = "extern/games";
-        fsType = "zfs";
-      };
+        "/vault" = {
+          device = "extern/vault";
+          fsType = "zfs";
+        };
 
-      fileSystems."/boot" = {
-        device = "/dev/disk/by-uuid/199F-164B";
-        fsType = "vfat";
-        options = [
-          "fmask=0022"
-          "dmask=0022"
-        ];
+        "/games" = {
+          device = "extern/games";
+          fsType = "zfs";
+        };
+
+        "/boot" = {
+          device = "/dev/disk/by-uuid/199F-164B";
+          fsType = "vfat";
+          options = [
+            "fmask=0022"
+            "dmask=0022"
+          ];
+        };
       };
 
       swapDevices = [ ];

@@ -15,6 +15,9 @@
       }
     ];
 
+    zramSwap.enable = true;
+    systemd.oomd.enable = true;
+
     imports = [
       self.nixosModules.user
       self.nixosModules.hardware

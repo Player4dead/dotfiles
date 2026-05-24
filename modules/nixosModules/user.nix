@@ -8,7 +8,10 @@
       users = {
         mutableUsers = false;
         users = {
-          root.initialPassword = "passwd";
+          root = {
+            initialPassword = "passwd";
+            hashedPasswordFile = config.sops.secrets.password.path;
+          };
 
           player = {
             shell = pkgs.zsh;
