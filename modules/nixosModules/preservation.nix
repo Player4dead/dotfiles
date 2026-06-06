@@ -50,6 +50,8 @@
               ".local/share/umu"
               "Games"
               ".config/qBittorrent"
+              ".local/share/qBittorrent"
+              ".config/Bitwarden"
             ];
             #
             files = [

@@ -6,9 +6,14 @@
     {
       programs = {
         steam = {
-          # gamescopeSession.enable = true;
+          protontricks.enable = true;
+
+          gamescopeSession.enable = true;
           enable = true;
-          # protontricks.enable = true;
+
+          extraCompatPackages = with pkgs; [
+            proton-ge-bin
+          ];
         };
         gamescope = {
           enable = true;

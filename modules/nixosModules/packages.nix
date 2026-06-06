@@ -8,6 +8,7 @@
         nixpkgs.config.allowUnfree = true;
 
         environment.systemPackages = with pkgs; [
+          devenv
           nixfmt
           btop
           tealdeer
@@ -28,6 +29,7 @@
           thunar
           p7zip
           krita
+          bitwarden-desktop
 
           nomacs
           revolt-desktop

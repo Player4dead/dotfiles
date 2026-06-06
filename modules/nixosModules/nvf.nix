@@ -24,6 +24,11 @@
                 type = [ "nixfmt" ];
               };
             };
+            rust = {
+              enable = true;
+              lsp.enable = true;
+              format.enable = true;
+            };
 
             bash = {
               enable = true;
