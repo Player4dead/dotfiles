@@ -23,6 +23,11 @@
     desktop =
       { pkgs, ... }:
       {
+
+        # DELETE ME LATER
+        nixpkgs.config.permittedInsecurePackages = [
+          "electron-39.8.10"
+        ];
         nixpkgs.config.allowUnfree = true;
 
         environment.systemPackages = with pkgs; [

@@ -26,11 +26,11 @@
           };
 
           binds = {
-            "Mod+Q".spawn = lib.getExe pkgs.alacritty;
+            "Mod+Q".spawn = lib.getExe self'.packages.myKitty;
             "Mod+Space".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
             "Mod+C".close-window = _: { };
-            "Mod+Z".spawn = lib.getExe inputs.zen-browser.packages.${pkgs.system}.default;
-            "Mod+E".spawn-sh = "${lib.getExe pkgs.alacritty} -e ${lib.getExe pkgs.yazi}";
+            "Mod+Z".spawn = lib.getExe inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
+            "Mod+E".spawn-sh = "${lib.getExe self'.packages.myKitty} -e ${lib.getExe pkgs.yazi}";
 
             "Mod+L".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call lockScreen lock";
 

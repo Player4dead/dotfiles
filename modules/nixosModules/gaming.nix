@@ -36,16 +36,16 @@
         protonup-qt
         protontricks
 
-        # (lutris.override {
-        #   # List of additional system libraries
-        #   extraLibraries = pkgs: [ winetricks ];
-        #
-        #   # List of additional system packages
-        #   extraPkgs = pkgs: [
-        #     winetricks
-        #     wine
-        #   ];
-        # })
+        (lutris.override {
+          # List of additional system libraries
+          extraLibraries = pkgs: [ winetricks ];
+
+          # List of additional system packages
+          extraPkgs = pkgs: [
+            winetricks
+            wine
+          ];
+        })
       ];
     };
 }
