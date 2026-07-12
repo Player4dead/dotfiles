@@ -9,15 +9,16 @@
       programs.nixcord = {
         enable = true;
         user = "player";
+        discord.vencord.enable = true;
         config = {
+          transparent = true;
           themeLinks = [
             "https://refact0r.github.io/midnight-discord/build/midnight.css"
           ];
           frameless = true;
           plugins = {
-            alwaysAnimate.enable = true;
+            # alwaysAnimate.enable = true;
             betterSettings.enable = true;
-            # betterFolders.enable = true;
             messageLogger.enable = true;
             silentTyping.enable = true;
             imageZoom.enable = true;
@@ -25,10 +26,9 @@
             fullSearchContext.enable = true;
             ClearURLs.enable = true;
             showHiddenThings.enable = true;
-            showHiddenChannels.enable = true;
-            # youtubeAdblock.enable = true;
-            # spotifyCrack.enable = true;
-            # experiments.enable = true;
+            # showHiddenChannels.enable = true;
+
+            petpet.enable = true;
           };
         };
       };

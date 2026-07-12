@@ -1,48 +1,44 @@
-{ inputs, ... }:
-{
+{inputs, ...}: {
+  flake.nixosModules.nvf = {pkgs, ...}: {
+    imports = [inputs.nvf.nixosModules.nvf];
+    environment.systemPackages = with pkgs; [nixd];
+    programs.nvf = {
+      enable = true;
+      settings.vim = {
+        autocomplete.nvim-cmp.enable = true;
+        lsp.enable = true;
 
-  flake.nixosModules.nvf =
-    { pkgs, ... }:
-    {
-      imports = [ inputs.nvf.nixosModules.nvf ];
-      environment.systemPackages = with pkgs; [ nixd ];
-      programs.nvf = {
-        enable = true;
-        settings.vim = {
-          autocomplete.nvim-cmp.enable = true;
-          lsp.enable = true;
+        languages = {
+          enableFormat = true;
+          nix = {
+            enable = true;
+            extraDiagnostics.enable = true;
+            lsp.enable = true;
 
-          languages = {
-            enableFormat = true;
-            nix = {
+            format = {
               enable = true;
-              extraDiagnostics.enable = true;
-              lsp.enable = true;
-
-              format = {
-                enable = true;
-                type = [ "nixfmt" ];
-              };
-            };
-            rust = {
-              enable = true;
-              lsp.enable = true;
-              format.enable = true;
-            };
-
-            bash = {
-              enable = true;
-              extraDiagnostics.enable = true;
-              lsp.enable = true;
-              format.enable = true;
+              type = ["alejandra"];
             };
           };
-          lsp = {
-            formatOnSave = true;
+          rust = {
+            enable = true;
+            lsp.enable = true;
+            format.enable = true;
+          };
+
+          bash = {
+            enable = true;
+            extraDiagnostics.enable = true;
+            lsp.enable = true;
+            format.enable = true;
           };
         };
+        lsp = {
+          formatOnSave = true;
+        };
       };
-      # set nvim to default text editor
-      environment.variables.EDITOR = "nvim";
     };
+    # set nvim to default text editor
+    environment.variables.EDITOR = "nvim";
+  };
 }

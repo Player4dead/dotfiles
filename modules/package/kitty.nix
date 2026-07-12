@@ -7,6 +7,8 @@
         inherit pkgs;
         settings = {
           confirm_os_window_close = 2;
+
+          background_opacity = 0.4;
         };
       };
     };

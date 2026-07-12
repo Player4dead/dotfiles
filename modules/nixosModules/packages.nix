@@ -1,77 +1,82 @@
-{ inputs, ... }:
+{
+  inputs,
+  Host,
+  ...
+}:
 {
 
-  flake.nixosModules = {
-    default =
-      { pkgs, ... }:
-      {
-        nixpkgs.config.allowUnfree = true;
+  flake.nixosModules.packages =
+    { pkgs, ... }:
+    let
+      packages = with pkgs; [
+        devenv
+        nixfmt
+        btop
+        tealdeer
+        git
+        unzip
+        lynx
+        inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+        p7zip
+        thunar
+        keepassxc
+        pavucontrol
+      ];
 
-        environment.systemPackages = with pkgs; [
-          devenv
-          nixfmt
-          btop
-          tealdeer
-          git
-          yazi
-          unzip
-          lynx
-          tmux
-        ];
-      };
+      hostPackages = with pkgs; [
+        krita
+        # bitwarden-desktop
 
-    desktop =
-      { pkgs, ... }:
-      {
+        nomacs
+        revolt-desktop
 
-        # DELETE ME LATER
-        nixpkgs.config.permittedInsecurePackages = [
-          "electron-39.8.10"
-        ];
-        nixpkgs.config.allowUnfree = true;
+        tor-browser
+        godot
+        yt-dlp
+        ffmpeg-full
+        qbittorrent
 
-        environment.systemPackages = with pkgs; [
-          thunar
-          p7zip
-          krita
-          bitwarden-desktop
+        lmms
 
-          nomacs
-          revolt-desktop
+        hexchat
+        easyeffects
 
-          keepassxc
-          pavucontrol
-          tor-browser
-          godot
-          yt-dlp
-          ffmpeg-full
-          qbittorrent
+        ryubing
+        librewolf
 
-          lmms
+        # to do: own package
+        (mpv.override {
+          scripts = with pkgs.mpvScripts; [
+            uosc
+            visualizer
+            videoclip
+            quality-menu
+            occivink.encode
+          ];
+        })
 
-          hexchat
-          easyeffects
+        (blender.override {
+          config.rocmSupport = true;
+          config.cudaSupport = false;
+        })
 
-          ryubing
-          inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-          librewolf
+      ];
+      # [
+      #   joplin-desktop
+      #   brightnessctl
+      # ];
+    in
+    {
+      nixpkgs.config.allowUnfree = true;
 
-          # to do: own package
-          (mpv.override {
-            scripts = with pkgs.mpvScripts; [
-              uosc
-              visualizer
-              videoclip
-              quality-menu
-              occivink.encode
-            ];
-          })
+      # DELETE ME
+      nixpkgs.config.permittedInsecurePackages = [
+        "electron-39.8.10"
+      ];
 
-          (blender.override {
-            config.rocmSupport = true;
-            config.cudaSupport = false;
-          })
-        ];
-      };
-  };
+      environment.systemPackages = packages ++ hostPackages;
+
+      programs.thunderbird.enable = true;
+    };
+
 }

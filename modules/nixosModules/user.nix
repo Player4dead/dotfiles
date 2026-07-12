@@ -1,9 +1,10 @@
-{ inputs, sops, ... }:
+{ self, ... }:
 {
-
   flake.nixosModules.user =
     { pkgs, config, ... }:
     {
+
+      imports = [ self.nixosModules.sops ];
 
       users = {
         mutableUsers = false;
@@ -25,6 +26,5 @@
       };
 
       sops.secrets.password.neededForUsers = true;
-      programs.zsh.enable = true;
     };
 }
