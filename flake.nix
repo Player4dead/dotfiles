@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    stable.url = "github:nixos/nixpkgs?ref=nixos-25.11";
+    stable.url = "github:nixos/nixpkgs?ref=nixos-26.05";
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
     sops-nix = {
@@ -30,6 +30,5 @@
     preservation.url = "github:nix-community/preservation";
   };
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
-
+  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
 }

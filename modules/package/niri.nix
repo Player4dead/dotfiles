@@ -15,6 +15,7 @@
         hotkey-overlay.skip-at-startup = _: {};
         prefer-no-csd = true;
         input = {
+          # focus-follows-mouse = ''"max-scroll-amount"="10%"'';
           keyboard.xkb.layout = "ch";
           mouse.accel-profile = "adaptive";
           # warp-mouse-to-focus = _: {};
@@ -109,31 +110,25 @@
         ];
 
         outputs = {
-          "DP-1" = {
+          "DP-2" = {
             focus-at-startup = _: {};
             variable-refresh-rate = _: {};
-            hot-corners = {
-              off = _: {};
-            };
             mode = "2560x1440@143.998";
-            scale = 1.2;
+            scale = 1.3;
 
             position = _: {
               props = {
-                x = 0;
+                x = 2048;
                 y = 0;
               };
             };
           };
-          "DP-2" = {
+          "HDMI-A-2" = {
             variable-refresh-rate = _: {};
-            hot-corners = {
-              off = _: {};
-            };
-            mode = "1920x1080@60.000";
+            mode = "2048x1152@60.000";
             position = _: {
               props = {
-                x = 2133;
+                x = 0;
                 y = 0;
               };
             };

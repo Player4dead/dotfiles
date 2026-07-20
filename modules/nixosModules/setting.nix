@@ -1,16 +1,12 @@
-{ inputs, ... }:
-{
+{inputs, ...}: {
+  flake.nixosModules.settings = {pkgs, ...}: {
+    time.timeZone = "Europe/Zurich";
 
-  flake.nixosModules.settings =
-    { pkgs, ... }:
-    {
-      time.timeZone = "Europe/Zurich";
+    boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_stable;
 
-      boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
+    i18n.defaultLocale = "de_CH.UTF-8";
+    console.keyMap = "sg";
 
-      i18n.defaultLocale = "de_CH.UTF-8";
-      console.keyMap = "sg";
-
-      boot.tmp.cleanOnBoot = true;
-    };
+    boot.tmp.cleanOnBoot = true;
+  };
 }

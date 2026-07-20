@@ -2,98 +2,95 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 {
+  flake.nixosModules.meschihardware = {
+    config,
+    lib,
+    pkgs,
+    modulesPath,
+    ...
+  }: {
+    imports = [
+      (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
-  flake.nixosModules.meschihardware =
-    {
-      config,
-      lib,
-      pkgs,
-      modulesPath,
-      ...
-    }:
-    {
-      imports = [
-        (modulesPath + "/installer/scan/not-detected.nix")
-      ];
-
-      boot = {
-        initrd = {
-          availableKernelModules = [
-            "nvme"
-            "xhci_pci"
-            "ahci"
-            "usbhid"
-            "sd_mod"
-          ];
-          kernelModules = [ ];
-        };
-        kernelModules = [ "kvm-amd" ];
-        extraModulePackages = [ ];
+    boot = {
+      initrd = {
+        availableKernelModules = [
+          "nvme"
+          "xhci_pci"
+          "ahci"
+          "usbhid"
+          "sd_mod"
+        ];
+        kernelModules = [];
       };
-
-      fileSystems = {
-        "/" = {
-          device = "tmpfs";
-          fsType = "tmpfs";
-          neededForBoot = true;
-          options = [
-            "mode=775"
-            "size=2G"
-          ];
-        };
-
-        "/cache" = {
-          device = "zroot/cache";
-          fsType = "zfs";
-          neededForBoot = true;
-        };
-
-        "/steam" = {
-          device = "zroot/steam";
-          fsType = "zfs";
-        };
-
-        "/tmp" = {
-          device = "zroot/tmp";
-          fsType = "zfs";
-          neededForBoot = true;
-        };
-
-        "/nix" = {
-          device = "zroot/nix";
-          fsType = "zfs";
-          neededForBoot = true;
-        };
-
-        "/persist" = {
-          device = "zroot/persist";
-          fsType = "zfs";
-          neededForBoot = true;
-        };
-
-        "/vault" = {
-          device = "extern/vault";
-          fsType = "zfs";
-        };
-
-        "/games" = {
-          device = "extern/games";
-          fsType = "zfs";
-        };
-
-        "/boot" = {
-          device = "/dev/disk/by-uuid/199F-164B";
-          fsType = "vfat";
-          options = [
-            "fmask=0022"
-            "dmask=0022"
-          ];
-        };
-      };
-
-      swapDevices = [ ];
-
-      nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-      hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+      kernelModules = ["kvm-amd"];
+      extraModulePackages = [];
     };
+
+    fileSystems = {
+      "/" = {
+        device = "tmpfs";
+        fsType = "tmpfs";
+        neededForBoot = true;
+        options = [
+          "mode=775"
+          "size=1G"
+        ];
+      };
+
+      "/cache" = {
+        device = "zroot/cache";
+        fsType = "zfs";
+        neededForBoot = true;
+      };
+
+      "/steam" = {
+        device = "zroot/steam";
+        fsType = "zfs";
+      };
+
+      "/tmp" = {
+        device = "zroot/tmp";
+        fsType = "zfs";
+        neededForBoot = true;
+      };
+
+      "/nix" = {
+        device = "zroot/nix";
+        fsType = "zfs";
+        neededForBoot = true;
+      };
+
+      "/persist" = {
+        device = "zroot/persist";
+        fsType = "zfs";
+        neededForBoot = true;
+      };
+
+      "/vault" = {
+        device = "extern/vault";
+        fsType = "zfs";
+      };
+
+      "/games" = {
+        device = "extern/games";
+        fsType = "zfs";
+      };
+
+      "/boot" = {
+        device = "/dev/disk/by-uuid/199F-164B";
+        fsType = "vfat";
+        options = [
+          "fmask=0022"
+          "dmask=0022"
+        ];
+      };
+    };
+
+    swapDevices = [];
+
+    nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+    hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  };
 }

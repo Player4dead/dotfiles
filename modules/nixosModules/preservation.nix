@@ -1,8 +1,6 @@
-{ inputs, ... }:
-{
-
+{inputs, ...}: {
   flake.nixosModules.preservation = {
-    imports = [ inputs.preservation.nixosModules.default ];
+    imports = [inputs.preservation.nixosModules.default];
 
     boot.tmp.cleanOnBoot = true;
     security.sudo.extraConfig = "Defaults lecture=never";
@@ -16,7 +14,7 @@
           ".local/share/Steam"
         ];
 
-        "/persist".users.player.directories = [ "projekt" ];
+        "/persist".users.player.directories = ["projekt"];
 
         "/cache" = {
           directories = [
@@ -52,6 +50,7 @@
               ".config/qBittorrent"
               ".local/share/qBittorrent"
               ".config/Bitwarden"
+              "Downloads"
             ];
             #
             files = [

@@ -8,6 +8,10 @@
 // - 280.0 in ember_spark: Spark size - higher = smaller sparks
 // - Loop counts (7.0, 8.0): Particle layers - more = more particles (performance impact)
 
+input {
+focus-follows-mouse "max-scroll-amount"="40%"
+}
+
 animations {
     window-open {
         duration-ms 400
