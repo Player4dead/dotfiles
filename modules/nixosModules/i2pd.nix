@@ -1,5 +1,4 @@
 {
-
   flake.nixosModules.i2pd = {
     containers.i2pd = {
       autoStart = false;
@@ -8,7 +7,6 @@
         hostPath = "/var/lib/i2pd";
         isReadOnly = false;
       };
-
       ephemeral = true;
 
       config = {
@@ -19,7 +17,7 @@
         # Exposing the nessecary ports in order to interact with i2p from outside the container
         networking.firewall.allowedTCPPorts = [
           7656 # default sam port
-          # 7070 # default web interface port
+          7070 # default web interface port
           4447 # default socks proxy port
           4444 # default http proxy port
         ];
@@ -39,10 +37,10 @@
           ];
           proto = {
             http.enable = true;
-            socksProxy.enable = true;
+            socksProxy.enable = false;
             httpProxy.enable = true;
             sam.enable = true;
-            i2cp.enable = true;
+            i2cp.enable = false;
 
             httpProxy.outproxy = "http://exit.stormycloud.i2p";
           };

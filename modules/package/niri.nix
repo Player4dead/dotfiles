@@ -103,13 +103,23 @@
             draw-border-with-background = false;
           }
           #
-          {
-            matches = [{is-active = false;}];
-            opacity = 0.75;
-          }
+          # {
+          #   matches = [{is-active = false;}];
+          #   opacity = 0.75;
+          # }
         ];
 
         outputs = {
+          "DP-1" = {
+            mode = "1920x1080@60.000";
+            transform = "90";
+            position = _: {
+              props = {
+                x = 4017;
+                y = 0;
+              };
+            };
+          };
           "DP-2" = {
             focus-at-startup = _: {};
             variable-refresh-rate = _: {};

@@ -43,6 +43,7 @@
               ".ssh"
               ".tor project"
               ".local/share/lutris"
+              ".cache/lutris"
               ".config/keepassxc"
               ".config/heroic"
               ".local/share/umu"
@@ -51,6 +52,9 @@
               ".local/share/qBittorrent"
               ".config/Bitwarden"
               "Downloads"
+              ".config/eden"
+              ".local/share/in.cinny.app"
+              ".config/helix"
             ];
             #
             files = [
