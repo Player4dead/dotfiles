@@ -2,56 +2,62 @@
   inputs,
   Host,
   ...
-}: {
-  flake.nixosModules.packages = {pkgs, ...}: let
-    packages = with pkgs; [
-      nixfmt
-      btop
-      git
-      unzip
-      unrar
-      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-      p7zip
-      thunar
-      # keepassxc
-      pavucontrol
-    ];
+}:
+{
+  flake.nixosModules.packages =
+    { pkgs, ... }:
+    let
+      packages = with pkgs; [
+        nixfmt
+        btop
+        git
+        unzip
+        unrar
+        inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+        p7zip
+        thunar
+        # keepassxc
+        pavucontrol
+        nixd
+        jujutsu
+      ];
 
-    hostPackages = with pkgs; [
-      krita
-      # bitwarden-desktop
+      hostPackages = with pkgs; [
+        krita
+        # bitwarden-desktop
 
-      helix
+        helix
 
-      revolt-desktop
-      cinny-desktop
+        revolt-desktop
+        cinny-desktop
 
-      tor-browser
-      godot
-      yt-dlp
-      ffmpeg-full
-      qbittorrent
+        tor-browser
+        godot
+        yt-dlp
+        ffmpeg-full
+        qbittorrent
 
-      # hexchat
-      easyeffects
+        # hexchat
+        # easyeffects
 
-      eden
-      librewolf
+        eden
+        librewolf
 
-      # to do: own package
-      (mpv.override {
-        scripts = with pkgs.mpvScripts; [
-          uosc
-          visualizer
-          videoclip
-          quality-menu
-          occivink.encode
-        ];
-      })
-    ];
-  in {
-    nixpkgs.config.allowUnfree = true;
+        # to do: own package
+        (mpv.override {
+          scripts = with pkgs.mpvScripts; [
+            uosc
+            visualizer
+            videoclip
+            quality-menu
+            occivink.encode
+          ];
+        })
+      ];
+    in
+    {
+      nixpkgs.config.allowUnfree = true;
 
-    environment.systemPackages = packages ++ hostPackages;
-  };
+      environment.systemPackages = packages ++ hostPackages;
+    };
 }

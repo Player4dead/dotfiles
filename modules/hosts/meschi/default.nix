@@ -2,16 +2,17 @@
   inputs,
   self,
   ...
-}: {
+}:
+{
   flake.nixosConfigurations.meschi = inputs.nixpkgs.lib.nixosSystem {
-    modules = [self.nixosModules.meschi];
+    modules = [ self.nixosModules.meschi ];
     specialArgs = {
       Host = "Desktop";
     };
   };
 
-  flake.nixosModules.meschi = {pkgs, ...}: {
-    nix.settings.trusted-users = ["player"];
+  flake.nixosModules.meschi = { pkgs, ... }: {
+    nix.settings.trusted-users = [ "player" ];
     programs.dconf.enable = true;
     programs.dconf.profiles.user.databases = [
       {
@@ -36,7 +37,7 @@
       ];
     };
 
-    boot.binfmt.emulatedSystems = ["aarch64-linux"];
+    boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
     imports = [
       self.nixosModules.user
@@ -55,7 +56,7 @@
       self.nixosModules.packages
       self.nixosModules.sound
       self.nixosModules.boot
-      # self.nixosModules.i2pd
+      self.nixosModules.i2pd
       self.nixosModules.nh
       self.nixosModules.nix
       self.nixosModules.settings

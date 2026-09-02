@@ -1,6 +1,6 @@
-{inputs, ...}: {
+{ inputs, ... }: {
   flake.nixosModules.preservation = {
-    imports = [inputs.preservation.nixosModules.default];
+    imports = [ inputs.preservation.nixosModules.default ];
 
     boot.tmp.cleanOnBoot = true;
     security.sudo.extraConfig = "Defaults lecture=never";
@@ -14,14 +14,14 @@
           ".local/share/Steam"
         ];
 
-        "/persist".users.player.directories = ["projekt"];
+        "/persist".users.player.directories = [ "projekt" ];
 
         "/cache" = {
           directories = [
             "/var/lib/bluetooth"
             "/var/lib/NetworkManager"
             "/etc/NetworkManager"
-            "/var/lib/i2pd"
+            "/var/lib/private/i2pd"
             "/var/cache/tailscale"
             "/var/lib/tailscale"
             {
@@ -55,6 +55,7 @@
               ".config/eden"
               ".local/share/in.cinny.app"
               ".config/helix"
+              ".config/jj"
             ];
             #
             files = [
