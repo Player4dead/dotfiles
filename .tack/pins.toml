@@ -1,0 +1,57 @@
+# tack pins
+# edit by hand or with tack add / rm / alias
+# nix reads pins.lock.json
+# this file drives tack update
+
+# shorturl schemes
+# scheme rest expands rest into {path}
+[shorturls]
+gh = "github:{path}"
+
+# all_follow maps input names to the top-level pin they follow
+# opt out per-input with exclude_follow
+[all_follow]
+nixpkgs = "nixpkgs"
+flake-parts = "flake-parts"
+
+# inputs.<name> fields
+#   url             required, shorturl ok, ?rev=<sha> pins an exact commit
+#   type            flake (default), fetch, or fixed
+#   flake           legacy false means type = "fetch"
+#   follows         { child = "pin" } override map
+#   exclude_follow  all_follow names to skip
+#   dir             subdir holding flake.nix
+#   submodules      fetch git submodules
+#   unpack          fixed-only tarball or file
+
+[inputs.nixpkgs]
+url = "gh:NixOS/nixpkgs/nixpkgs-unstable"
+
+[inputs.stable]
+url = "gh:nixos/nixpkgs?ref=nixos-26.05"
+
+[inputs.flake-parts]
+url = "gh:hercules-ci/flake-parts"
+   
+[inputs.import-tree]
+url = "gh:vic/import-tree"
+  
+[inputs.sops-nix]
+url = "gh:Mic92/sops-nix"
+   
+[inputs.zen-browser]
+url = "gh:youwen5/zen-browser-flake"
+   
+[inputs.wrapper-modules]
+url = "gh:BirdeeHub/nix-wrapper-modules"
+   
+[inputs.nixcord]
+url = "gh:4evy/nixcord"
+
+[inputs.preservation]
+url = "gh:nix-community/preservation"
+
+ 
+
+[tack]
+recomposable = true

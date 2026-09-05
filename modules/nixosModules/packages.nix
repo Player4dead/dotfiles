@@ -20,6 +20,9 @@
         pavucontrol
         nixd
         jujutsu
+        qemu
+        bat
+        tack
       ];
 
       hostPackages = with pkgs; [
