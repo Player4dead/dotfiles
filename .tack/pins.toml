@@ -51,7 +51,5 @@ url = "gh:4evy/nixcord"
 [inputs.preservation]
 url = "gh:nix-community/preservation"
 
- 
-
-[tack]
-recomposable = true
+# [tack]
+# recomposable = true

@@ -1,13 +1,3 @@
-# {
-#   description = "A very basic flake";
-
-#   outputs =
-#     let
-#       inputs = import ./.tack;
-#     in
-#     inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
-# }
-
 {
   description = "A very basic flake";
 
@@ -17,12 +7,6 @@
       inputs = (import ./.tack) {
         overrides = args.tackOverrides or { };
       };
-      inherit (inputs.nixpkgs.lib)
-        filesystem
-        hasSuffix
-        ;
     in
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = builtins.filter (hasSuffix ".nix") (filesystem.listFilesRecursive ./modules);
-    };
+    inputs.flake-parts.lib.mkFlake { inherit inputs self; } (inputs.import-tree ./modules);
 }
