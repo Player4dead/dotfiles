@@ -31,10 +31,10 @@ url = "gh:NixOS/nixpkgs/nixpkgs-unstable"
 url = "gh:nixos/nixpkgs?ref=nixos-26.05"
 
 [inputs.flake-parts]
-url = "gh:hercules-ci/flake-parts"
+url = "gh:ladas552/flake-parts"
    
-[inputs.import-tree]
-url = "gh:vic/import-tree"
+# [inputs.import-tree]
+# url = "gh:vic/import-tree"
   
 [inputs.sops-nix]
 url = "gh:Mic92/sops-nix"

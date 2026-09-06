@@ -1,6 +1,5 @@
 {
   inputs,
-  Host,
   ...
 }:
 {
@@ -20,9 +19,11 @@
         pavucontrol
         nixd
         jujutsu
-        qemu
         bat
         tack
+
+        nomadnet
+        renode
       ];
 
       hostPackages = with pkgs; [

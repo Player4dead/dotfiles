@@ -56,6 +56,7 @@
               ".local/share/in.cinny.app"
               ".config/helix"
               ".config/jj"
+              ".reticulum"
             ];
             #
             files = [
