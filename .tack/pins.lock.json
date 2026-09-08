@@ -1,19 +1,27 @@
 {
   "flake-parts": {
     "type": "github",
-    "owner": "ladas552",
+    "owner": "Player4dead",
     "repo": "flake-parts",
-    "rev": "00267073e997e0e408ea7c2f2ae78b76be362376",
-    "narHash": "sha256-pp2pYNIK4WquW/7GM9uZaj88mGoWJR4W4Tk/GNGGjOI=",
-    "lastModified": 1780260581
+    "rev": "f7911313c6d8059c90a1641783e6caa959fcb372",
+    "narHash": "sha256-2gqISBJOWgGA4o8vO3rZH3iXPwaDke09RlW26YWzae4=",
+    "lastModified": 1788687811
   },
   "nixcord": {
     "type": "github",
     "owner": "4evy",
     "repo": "nixcord",
-    "rev": "fe406aa31899dc0f99225fc80ef8a3ee2b5a6817",
-    "narHash": "sha256-APIHhKH8PjXV+oG2+GGnb7Uo56rBO97iVykTtTIgtBI=",
-    "lastModified": 1788661402
+    "rev": "70f6f5fc5b063021393b25e1ae940edb827e1c48",
+    "narHash": "sha256-BRai5YktxQbce79p9AEenHrOd6AJOxZO8B/ZUhDG2LA=",
+    "lastModified": 1788682587
+  },
+  "nixos-core": {
+    "type": "github",
+    "owner": "manic-systems",
+    "repo": "nixos-core",
+    "rev": "2759f02d6bb7d1b5bcf4ae99038ab54148f91698",
+    "narHash": "sha256-yd7gLFMW3tDMFsaX+yBVWys2Aux7l4PLUfkwt5fcPCo=",
+    "lastModified": 1787390698
   },
   "nixpkgs": {
     "type": "github",
@@ -59,8 +67,8 @@
     "type": "github",
     "owner": "youwen5",
     "repo": "zen-browser-flake",
-    "rev": "afbbbef7c3c00f160f4a9dfdd8c6c6b8b089a33f",
-    "narHash": "sha256-e6U3sXUlu/QzZyJp/+ymW8s57Jbdb7bwT9+WaTAhHfQ=",
-    "lastModified": 1788083005
+    "rev": "3aadc420e763a8243aedd2ce925ae1dc13663ed9",
+    "narHash": "sha256-E03KyK0Sj+ia+FSy47XC4v9enU1C/lGiW5ZKmcJoI1M=",
+    "lastModified": 1788682845
   }
 }

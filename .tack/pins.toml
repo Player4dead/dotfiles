@@ -31,7 +31,7 @@ url = "gh:NixOS/nixpkgs/nixpkgs-unstable"
 url = "gh:nixos/nixpkgs?ref=nixos-26.05"
 
 [inputs.flake-parts]
-url = "gh:ladas552/flake-parts"
+url = "gh:Player4dead/flake-parts"
    
 # [inputs.import-tree]
 # url = "gh:vic/import-tree"
@@ -50,6 +50,9 @@ url = "gh:4evy/nixcord"
 
 [inputs.preservation]
 url = "gh:nix-community/preservation"
+
+[inputs.nixos-core]
+url = "gh:manic-systems/nixos-core"
 
 # [tack]
 # recomposable = true

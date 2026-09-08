@@ -67,6 +67,8 @@
       # self.nixosModules.virt
       self.nixosModules.preservation
       self.nixosModules.sanoid
+
+      inputs.nixos-core.nixosModules.nixos-core
     ];
 
     networking.hostName = "meschi";

@@ -24,6 +24,11 @@
 
         nomadnet
         renode
+
+        zellij
+        devenv
+
+        fastfetch
       ];
 
       hostPackages = with pkgs; [
@@ -31,6 +36,8 @@
         # bitwarden-desktop
 
         helix
+
+        firefox
 
         revolt-desktop
         cinny-desktop

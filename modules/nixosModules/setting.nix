@@ -1,5 +1,5 @@
-{
-  flake.nixosModules.settings = {pkgs, ...}: {
+{ self, ... }: {
+  flake.nixosModules.settings = { pkgs, ... }: {
     time.timeZone = "Europe/Zurich";
 
     # boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_stable;
@@ -8,5 +8,7 @@
     console.keyMap = "sg";
 
     boot.tmp.cleanOnBoot = true;
+
+    imports = [ self.nixosModules.sops ];
   };
 }
