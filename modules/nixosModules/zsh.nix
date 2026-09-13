@@ -7,7 +7,7 @@
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
 
-      interactiveShellInit = "fastfetch";
+      # interactiveShellInit = "fastfetch";
 
       histSize = 10000;
       histFile = "$HOME/.zsh_history";

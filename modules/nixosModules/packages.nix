@@ -6,13 +6,14 @@
   flake.nixosModules.packages =
     { pkgs, ... }:
     let
+      zen-browser = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
+
       packages = with pkgs; [
         nixfmt
         btop
         git
         unzip
         unrar
-        inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
         p7zip
         thunar
         # keepassxc
@@ -23,9 +24,6 @@
         tack
 
         nomadnet
-        renode
-
-        zellij
         devenv
 
         fastfetch
@@ -53,6 +51,13 @@
 
         eden
         librewolf
+
+        (zen-browser.overrideAttrs (old: {
+          passthru = (old.passthru or { }) // {
+            withFFmpeg = true;
+            withGSSAPI = true;
+          };
+        }))
 
         # to do: own package
         (mpv.override {

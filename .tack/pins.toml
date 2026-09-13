@@ -25,7 +25,7 @@ flake-parts = "flake-parts"
 #   unpack          fixed-only tarball or file
 
 [inputs.nixpkgs]
-url = "gh:NixOS/nixpkgs/nixpkgs-unstable"
+url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
 
 [inputs.stable]
 url = "gh:nixos/nixpkgs?ref=nixos-26.05"
