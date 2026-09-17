@@ -3,8 +3,8 @@
 
   flake.nixosModules.net = {
     networking.networkmanager.enable = true;
-    services.tailscale = {
-      enable = true;
-    };
+    # services.tailscale = {
+    #   enable = true;
+    # };
   };
 }

@@ -37,6 +37,23 @@
       ];
     };
 
+    services.avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
+
+    services.printing = {
+      enable = true;
+      drivers = with pkgs; [
+        cups-filters
+        cups-browsed
+      ];
+    };
+
+    services.resolved = {
+      enable = true;
+    };
     services.netbird.clients.wt0 = {
 
       # Automatically login to your Netbird network with a setup key
@@ -62,8 +79,6 @@
       # This opens necessary firewall ports in the Netbird client's network interface
       openInternalFirewall = true;
     };
-
-    security.pki.certificateFiles = [ ./raspi.netbird.cloud.crt ];
 
     boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 

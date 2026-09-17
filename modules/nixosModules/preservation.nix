@@ -40,6 +40,7 @@
               ".config/discord"
               ".config/noctalia"
               ".config/librewolf"
+              ".config/netbird"
               ".ssh"
               ".tor project"
               ".local/share/lutris"
